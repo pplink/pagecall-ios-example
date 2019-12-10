@@ -23,6 +23,8 @@ class ViewController: UIViewController {
         UserDefaults.standard.set(self.serverURL.text, forKey: "serverURL")
         
         let pageCall = PageCall.sharedInstance()
+        pageCall.delegate = self
+        
         #if DEBUG
         #else
         // enable pagecall log
@@ -30,19 +32,16 @@ class ViewController: UIViewController {
         #endif
         // 1. startMeeting with URL
         //let url = String(format: "%@:5000", self.serverURL.text!);
-        //pageCall.connect(inMyID: self.myId.text ?? "", roomId: self.roomId.text ?? "", pcaURL: url)
-        //pageCall.delegate = self
+        //pageCall.connect(inMyID: self.myId.text!, roomId: self.roomId.text!, pcaURL: url)
         
         // 1. call
-        pageCall.call(withMyId: self.myId.text ?? "", roomId: self.roomId.text ?? "", pcaURL: self.serverURL.text ?? "")
-        pageCall.delegate = self
+        pageCall.call(withMyId: self.myId.text!, roomId: self.roomId.text!, pcaURL: self.serverURL.text!)
         
         /*
         // 2. startMeeting with htmlString
         let htmlFile = Bundle.main.path(forResource: "Documents/test", ofType: "html")
         let htmlString = try? String(contentsOfFile: htmlFile!, encoding: String.Encoding.utf8)
         pageCall.loadHTMLString(htmlString ?? "")
-        pageCall.delegate = self
         */
 
         // present viewController
