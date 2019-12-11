@@ -18,9 +18,13 @@ class ViewController: UIViewController {
     
     @IBAction func onStart(_ sender: UIButton) {
         
-        UserDefaults.standard.set(self.myId.text, forKey: "myId")
-        UserDefaults.standard.set(self.roomId.text, forKey: "roomId")
-        UserDefaults.standard.set(self.serverURL.text, forKey: "serverURL")
+        let myId = self.myId.text!
+        let roomId = self.roomId.text!
+        let url = self.serverURL.text!
+        
+        UserDefaults.standard.set(myId, forKey: "myId")
+        UserDefaults.standard.set(roomId, forKey: "roomId")
+        UserDefaults.standard.set(url, forKey: "serverURL")
         
         let pageCall = PageCall.sharedInstance()
         pageCall.delegate = self
@@ -30,19 +34,17 @@ class ViewController: UIViewController {
         // enable pagecall log
         pageCall.enableLog()
         #endif
-        // 1. startMeeting with URL
-        //let url = String(format: "%@:5000", self.serverURL.text!);
-        //pageCall.connect(inMyID: self.myId.text!, roomId: self.roomId.text!, pcaURL: url)
         
-        // 1. call
-        pageCall.call(withMyId: self.myId.text!, roomId: self.roomId.text!, pcaURL: self.serverURL.text!)
+        // #1 Connect-In
+        pageCall.connect(inMyID: myId, roomId: roomId, pcaURL: url)
         
-        /*
-        // 2. startMeeting with htmlString
-        let htmlFile = Bundle.main.path(forResource: "Documents/test", ofType: "html")
-        let htmlString = try? String(contentsOfFile: htmlFile!, encoding: String.Encoding.utf8)
-        pageCall.loadHTMLString(htmlString ?? "")
-        */
+        // #2 Call
+        //pageCall.call(withMyId: myId, roomId: roomId, pcaURL: url)
+        
+        // #3 Load HTML
+//        let htmlFile = Bundle.main.path(forResource: "Documents/test", ofType: "html")
+//        let htmlString = try? String(contentsOfFile: htmlFile!, encoding: String.Encoding.utf8)
+//        pageCall.loadHTMLString(htmlString ?? "")
 
         // present viewController
         pageCall.pcViewController?.modalPresentationStyle = .overFullScreen
