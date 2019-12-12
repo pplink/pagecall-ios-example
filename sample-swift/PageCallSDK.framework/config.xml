@@ -2,6 +2,7 @@
 <widget id="com.pplink.pagecall" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
+        <param name="onload" value="true" />
     </feature>
     <feature name="Console">
         <param name="ios-package" value="CDVLogger" />
@@ -26,12 +27,15 @@
     <allow-navigation href="ionic://*" />
     <feature name="IonicWebView">
         <param name="ios-package" value="CDVWKWebViewEngine" />
+        <param name="onload" value="true" />
     </feature>
     <feature name="InAppBrowser">
         <param name="ios-package" value="CDVInAppBrowser" />
+        <param name="onload" value="true" />
     </feature>
     <feature name="AudioRoute">
         <param name="ios-package" value="AudioRoute" />
+        <param name="onload" value="true" />
     </feature>
     <name>PageCall</name>
     <description>
@@ -77,7 +81,7 @@
     <preference name="PaginationMode" value="unpaginated" />
     <preference name="deployment-target" value="11.0" />
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
-    <preference name="UseSwiftLanguageVersion" value="5" />
+    <preference name="UseSwiftLanguageVersion" value="4.2" />
     <preference name="BackgroundColor" value="#ffffff"/>
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="StatusBarOverlaysWebView" value="true" />
