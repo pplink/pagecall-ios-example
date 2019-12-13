@@ -23,9 +23,6 @@ Pagecall iOS SDK를 이용하면 여러분의 iOS 어플리케이션에 쉽고 �
 
 1. `PageCallSDK.framework`, `WebRTC.framework` 파일을 Xcode 프로젝트에 복사
 2. General → Frameworks, Libraries, and Embedded Content → ➕ 버튼 클릭 → `PageCallSDK.framework`, `WebRTC.framework` 두 개의 framework를 iOS 프로젝트에 추가
-
-    ![README/_2019-11-22__7.01.04.png](Get%20the%20PageCall%20SDK%20for%20iOS/_2019-11-22__7.01.04.png)
-
 3. Embed 옵션은 `Embed & Sign` 으로 설정
 4. Build Settings → Build Options → `Enable Bitcode = No` 로 설정
 5. Build Settings → Swift Compiler → Import Paths  + `$(SRCROOT)/PageCallSDK.framework/Headers` 추가
