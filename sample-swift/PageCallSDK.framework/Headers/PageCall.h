@@ -36,12 +36,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (PCMainViewController *)webViewLoadRequestWithURLString:(NSString *)urlString;
 
-// Close the PageCall window
-- (void)pageCallClose;
+- (NSString *)pageCallLogFilePath;
 
 - (void)enablePageCallLog;
 
-- (NSString *)pageCallLogFilePath;
+- (void)restoreLog;
+
+// Close the PageCall window
+- (void)pageCallClose;
 
 @end
 
