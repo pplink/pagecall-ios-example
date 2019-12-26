@@ -17,7 +17,7 @@
 
 @interface PCMainViewController : UIViewController
 
-@property (nonatomic, assign) id<PCMainViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<PCMainViewControllerDelegate> delegate;
 
 // PCA ConnectionIn
 - (void)connectInMyId:(NSString *)myId publicRoomId:(NSString *)publicRoomId pcaURL:(NSString*)pcaURL;

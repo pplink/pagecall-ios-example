@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PageCall : NSObject<PCMainViewControllerDelegate>
 
-@property (nonatomic, assign, nullable) id<PageCallDelegate> delegate;
+@property (nonatomic, weak, nullable) id<PageCallDelegate> delegate;
 
 @property (nonatomic, strong, nullable) PCMainViewController* pcViewController;
 
