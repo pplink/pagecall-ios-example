@@ -21,29 +21,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, nullable) id<PageCallDelegate> delegate;
 
-@property (nonatomic, strong, nullable) PCMainViewController* pcViewController;
+@property (nonatomic, strong) PCMainViewController* mainViewController;
 
 + (PageCall *)sharedInstance;
 
-// PCA ConnectionIn
-- (PCMainViewController *)connectInMyID:(NSString *)myId roomId:(NSString *)roomId pcaURL:(NSString *)pcaURL;
-
-// PCA Call
-- (PCMainViewController *)callWithMyId:(NSString *)myId roomId:(NSString *)publicRoomId pcaURL:(NSString*)pcaURL;
-
-// Load HTML String
-- (PCMainViewController *)loadHTMLString:(NSString *)htmlString;
-
-- (PCMainViewController *)webViewLoadRequestWithURLString:(NSString *)urlString;
+// Close the PageCall window
+- (void)pageCallClose;
 
 - (NSString *)pageCallLogFilePath;
 
 - (void)enablePageCallLog;
 
 - (void)restoreLog;
-
-// Close the PageCall window
-- (void)pageCallClose;
 
 @end
 

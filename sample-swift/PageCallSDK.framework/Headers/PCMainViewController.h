@@ -20,10 +20,10 @@
 @property (nonatomic, weak) id<PCMainViewControllerDelegate> delegate;
 
 // PCA ConnectionIn
-- (void)connectInMyId:(NSString *)myId publicRoomId:(NSString *)publicRoomId pcaURL:(NSString*)pcaURL;
+- (void)connectInMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL;
 
 // PCA Call
-- (void)callWithMyId:(NSString *)myId publicRoomId:(NSString *)publicRoomId pcaURL:(NSString*)pcaURL;
+- (void)callMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL;
 
 // Load HTML String
 - (void)loadHTMLString:(NSString *)htmlString;
