@@ -23,6 +23,9 @@ Pagecall iOS SDK를 이용하면 여러분의 iOS 어플리케이션에 쉽고 �
 
 1. `PageCallSDK.framework`, `WebRTC.framework` 파일을 Xcode 프로젝트에 복사
 2. General → Frameworks, Libraries, and Embedded Content → ➕ 버튼 클릭 → `PageCallSDK.framework`, `WebRTC.framework` 두 개의 framework를 iOS 프로젝트에 추가
+
+    ![Frameworks.png](Frameworks.png)
+
 3. Embed 옵션은 `Embed & Sign` 으로 설정
 4. Build Settings → Build Options → `Enable Bitcode = No` 로 설정
 5. Build Settings → Swift Compiler → Import Paths  + `$(SRCROOT)/PageCallSDK.framework/Headers` 추가
@@ -61,10 +64,14 @@ PageCallSDK 적용 이전에 **PageCall API Server**에 정보를 전달할 사�
     
     let pageCall = PageCall.sharedInstance()
     pageCall.delegate = self
-    pageCall.connect(inMyID: myId, roomId: roomId, pcaURL: url)
     
-    pageCall.pcViewController?.modalPresentationStyle = .overFullScreen
-    self.present(pageCall.pcViewController!, animated: true, completion: nil)
+    // PageCall MainViewController present
+    let mainViewController:PCMainViewController = pageCall.mainViewController
+    mainViewController.modalPresentationStyle = .overFullScreen
+    self.present(mainViewController, animated: true, completion: {
+    		// PCA Connect-In
+        mainViewController.connect(inMyID: myID, roomID: roomID, serverURL: serverURL)
+    })
 
     // Objective-C
     NSString *myId = "teacher-001"; // PCA userId
@@ -73,10 +80,13 @@ PageCallSDK 적용 이전에 **PageCall API Server**에 정보를 전달할 사�
      
     PageCall *pageCall = [PageCall sharedInstance];
     [pageCall setDelegate:self];
-    [pageCall connectInMyID:myId roomId:roomId pcaURL:url];
     
-    pageCall.pcViewController.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    [self presentViewController:pageCall.pcViewController animated:YES completion:nil];
+    PCMainViewController *mainVeiwController = pageCall.mainViewController;
+    mainVeiwController.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    [self presentViewController:mainVeiwController animated:YES completion:^{
+         // PCA Connect-In
+         [mainVeiwController connectInMyID:myID roomID:roomID serverURL:serverURL];
+    }];
 
 ### 3. PageCall 종료
 
