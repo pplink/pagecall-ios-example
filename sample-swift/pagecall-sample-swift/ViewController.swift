@@ -36,19 +36,19 @@ class ViewController: UIViewController {
         #endif
 
         // PageCall MainViewController present
-        let mainViewController:PCMainViewController = pageCall.mainViewController
+        let mainViewController = pageCall.mainViewController
         mainViewController.modalPresentationStyle = .overFullScreen
         self.present(mainViewController, animated: true, completion: {
-            // #1 Connect-In
-            //mainViewController.connect(inMyID: myID, roomID: roomID, serverURL: serverURL)
+            // #1 Call
+            pageCall.callMyID(myID, roomID: roomID, serverURL: serverURL)
             
-            // #2 Call
-            mainViewController.callMyID(myID, roomID: roomID, serverURL: serverURL)
+            // #2 Connect-In
+            //pageCall.connect(inMyID: myID, roomID: roomID, serverURL: serverURL)
             
             // #3 Load HTML
 //            let htmlFile = Bundle.main.path(forResource: "Documents/test", ofType: "html")
 //            let htmlString = try? String(contentsOfFile: htmlFile!, encoding: String.Encoding.utf8)
-//            mainViewController.loadHTMLString(htmlString ?? "")
+//            pageCall.loadHTMLString(htmlString ?? "")
         })
     }
     

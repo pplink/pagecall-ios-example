@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PCMainViewController.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,19 +17,33 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface PageCall : NSObject<PCMainViewControllerDelegate>
+@interface PageCall : NSObject
 
 @property (nonatomic, weak, nullable) id<PageCallDelegate> delegate;
 
-@property (nonatomic, strong) PCMainViewController* mainViewController;
+@property (nonatomic, strong) UIViewController* mainViewController;
 
 + (PageCall *)sharedInstance;
+
+// PCA ConnectionIn
+- (void)connectInMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL;
+
+// PCA Call
+- (void)callMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL;
+
+// Load HTML String
+- (void)loadHTMLString:(NSString *)htmlString;
+
+// Load URL
+- (void)webViewLoadRequestWithURLString:(NSString *)urlString;
 
 // Close the PageCall window
 - (void)pageCallClose;
 
+// Get log file path
 - (NSString *)pageCallLogFilePath;
 
+// Enable log
 - (void)enablePageCallLog;
 
 - (void)restoreLog;
