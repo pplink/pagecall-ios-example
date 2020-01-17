@@ -32,10 +32,11 @@ var app = {
         if (cordova && cordova.plugins && cordova.plugins.iosrtc) {
             // Expose WebRTC and GetUserMedia SHIM as Globals (Optional)
             // Alternatively WebRTC API will be inside cordova.plugins.iosrtc namespace
+            // already use PCA client
             //cordova.plugins.iosrtc.registerGlobals();
                          
             // Enable iosrtc debug (Optional)
-            cordova.plugins.iosrtc.debug.enable('*', true);
+            cordova.plugins.iosrtc.debug.enable('iosrtc*');
             
             // load adapter.js
             var adapterVersion = 'latest';
