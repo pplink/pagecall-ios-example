@@ -43,8 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 // Get log file path
 - (NSString *)pageCallLogFilePath;
 
-// Enable log
-- (void)enablePageCallLog;
+// Log to Documents
+- (void)redirectLogToDocumentsWithInterval:(NSInteger)hour;
 
 - (void)restoreLog;
 

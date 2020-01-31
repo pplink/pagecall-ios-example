@@ -31,8 +31,8 @@ class ViewController: UIViewController {
         
         #if DEBUG
         #else
-        // enable pagecall log
-        pageCall.enableLog()
+        // pagecall log
+        pageCall.redirectLogToDocuments(withInterval:1)
         #endif
 
         // PageCall MainViewController present
