@@ -62,7 +62,6 @@
 		54005C2B227C10D400F01F79 = {
 			isa = PBXGroup;
 			children = (
-				546158D1229296C300D159EC /* PageCallSDK.framework */,
 				54BE67FB22927C4300877247 /* Documents */,
 				54005C36227C10D400F01F79 /* pagecall-sample-swift */,
 				54005C35227C10D400F01F79 /* Products */,
@@ -94,6 +93,7 @@
 		548378B3238FD3DF008B0B05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				546158D1229296C300D159EC /* PageCallSDK.framework */,
 				548378B4238FD3DF008B0B05 /* WebRTC.framework */,
 			);
 			name = Frameworks;
@@ -333,7 +333,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.13;
+				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pplink.pagecallapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/PageCallSDK.framework/Headers";
@@ -361,7 +361,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.13;
+				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pplink.pagecallapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/PageCallSDK.framework/Headers";

@@ -29,12 +29,12 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         var cordova = window.cordova;
-        if (cordova && cordova.plugins && cordova.plugins.iosrtc) {
+        if (cordova && cordova.plugins && cordova.plugins.iosrtc && cordova.platformId === 'ios') {
             // Expose WebRTC and GetUserMedia SHIM as Globals (Optional)
             // Alternatively WebRTC API will be inside cordova.plugins.iosrtc namespace
             // already use PCA client
             //cordova.plugins.iosrtc.registerGlobals();
-                         
+            
             // Enable iosrtc debug (Optional)
             cordova.plugins.iosrtc.debug.enable('iosrtc*');
             

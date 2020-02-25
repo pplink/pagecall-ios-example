@@ -2797,6 +2797,8 @@ module.exports = {
 	// Expose the debug module.
 	debug:                 _dereq_('debug'),
 
+    freeCamera:            freeCamera,
+ 
 	// Debug function to see what happens internally.
 	dump:                  dump
 };
@@ -2943,6 +2945,10 @@ function registerGlobals(doNotRestoreCallbacksSupport) {
 
 function dump() {
 	exec(null, null, 'iosrtcPlugin', 'dump', []);
+}
+ 
+function freeCamera() {
+    exec(null, null, 'iosrtcPlugin', 'freeCamera', []);
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
