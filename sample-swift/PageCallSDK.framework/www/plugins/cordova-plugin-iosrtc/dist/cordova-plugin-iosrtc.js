@@ -2797,7 +2797,7 @@ module.exports = {
 	// Expose the debug module.
 	debug:                 _dereq_('debug'),
 
-    freeCamera:            freeCamera,
+    onTerminate:            onTerminate,
  
 	// Debug function to see what happens internally.
 	dump:                  dump
@@ -2943,12 +2943,12 @@ function registerGlobals(doNotRestoreCallbacksSupport) {
 	window.MediaStreamTrack                 = MediaStreamTrack;
 }
 
-function dump() {
-	exec(null, null, 'iosrtcPlugin', 'dump', []);
+function onTerminate() {
+    exec(null, null, 'iosrtcPlugin', 'onTerminate', []);
 }
  
-function freeCamera() {
-    exec(null, null, 'iosrtcPlugin', 'freeCamera', []);
+function dump() {
+	exec(null, null, 'iosrtcPlugin', 'dump', []);
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
