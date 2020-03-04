@@ -36,7 +36,8 @@ var app = {
             //cordova.plugins.iosrtc.registerGlobals();
             
             // Enable iosrtc debug (Optional)
-            cordova.plugins.iosrtc.debug.enable('iosrtc*');
+            //cordova.plugins.iosrtc.debug.enable('iosrtc*');
+            cordova.plugins.iosrtc.debug.enable(false);
             
             // load adapter.js
             var adapterVersion = 'latest';
@@ -47,6 +48,10 @@ var app = {
             document.getElementsByTagName("head")[0].appendChild(script);
             console.log('load adapter.js');
         }
+        
+        // log level
+        var logger = require('cordova/plugin/ios/logger');
+        logger.level('ERROR');
         
         document.addEventListener('pause', this.onPause, false);
         document.addEventListener('resume', this.onResume, false);
