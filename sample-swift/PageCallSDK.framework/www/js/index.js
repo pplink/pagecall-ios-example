@@ -36,22 +36,22 @@ var app = {
             //cordova.plugins.iosrtc.registerGlobals();
             
             // Enable iosrtc debug (Optional)
-            //cordova.plugins.iosrtc.debug.enable('iosrtc*');
-            cordova.plugins.iosrtc.debug.enable(false);
+            cordova.plugins.iosrtc.debug.enable('iosrtc*');
+            //cordova.plugins.iosrtc.debug.enable(false);
+            
+            // Set log level ERROR
+            //var logger = require('cordova/plugin/ios/logger');
+            //logger.level('ERROR');
             
             // load adapter.js
-            var adapterVersion = 'latest';
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            script.src = "https://webrtc.github.io/adapter/adapter-" + adapterVersion + ".js";
-            script.async = false;
-            document.getElementsByTagName("head")[0].appendChild(script);
-            console.log('load adapter.js');
+            //var adapterVersion = 'latest';
+            //var script = document.createElement("script");
+            //script.type = "text/javascript";
+            //script.src = "https://webrtc.github.io/adapter/adapter-" + adapterVersion + ".js";
+            //script.async = false;
+            //document.getElementsByTagName("head")[0].appendChild(script);
+            //console.log('load adapter.js');
         }
-        
-        // log level
-        var logger = require('cordova/plugin/ios/logger');
-        logger.level('ERROR');
         
         document.addEventListener('pause', this.onPause, false);
         document.addEventListener('resume', this.onResume, false);
@@ -173,7 +173,7 @@ function mapDOM(element, json) {
 
 function loadHtml(html) {
   var json = mapDOM(html, false);
-  // console.log('json', json);
+  console.log('json', JSON.stringify(json));
   (function (map, window) {
     if (!window) console.error('global variable \'window\' is needed');
 
@@ -182,7 +182,9 @@ function loadHtml(html) {
 
     var setAttribute = function (currentNode, attributes) {
       for (var attrName in attributes) {
-        currentNode.setAttribute(attrName, attributes[attrName]);
+        if (attrName !== 'nomodule') {
+          currentNode.setAttribute(attrName, attributes[attrName]);
+        }
       }
     };
 
@@ -222,9 +224,9 @@ function loadHtml(html) {
     };
 
     var createNode = function (elem, parentNode) {
-      //console.log('createNode invoked', elem, parentNode);
+      console.log('createNode invoked', elem, parentNode);
       var currentNode = makeCurrentNode(elem);
-      //console.log('currentNode', currentNode);
+      console.log('currentNode', currentNode);
       var childElems = elem.content;
 
       for (var idx in childElems) {
@@ -270,7 +272,7 @@ function processUrl(url) {
     var decodedHtml = decodeURI(rawHtml);
     //console.log('decodedHtml', decodedHtml);
     var html = decodedHtml.replace(/\<!DOCTYPE.+?\>/g,'').replace(/\<!doctype.+?\>/g,'').trim();
-    //console.log('retHtml', html);
+    console.log('retHtml', html);
     
     loadHtml(html);
 }

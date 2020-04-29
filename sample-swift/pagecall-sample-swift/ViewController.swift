@@ -16,6 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet var serverURL: UITextField!
     @IBOutlet var start: UIButton!
     
+    @IBOutlet var userID: UITextField!
+    @IBOutlet var userName: UITextField!
+    @IBOutlet var lsaRoomID: UITextField!
+    @IBOutlet var lsaServerURL: UITextField!
+    @IBOutlet var lsaStart: UIButton!
+    @IBOutlet var switchHost: UISwitch!
+    
     @IBAction func onStart(_ sender: UIButton) {
         
         let myID = self.myID.text!
@@ -52,15 +59,51 @@ class ViewController: UIViewController {
         })
     }
     
+    @IBAction func onLSA(_ sender: UIButton) {
+            
+            let userID = self.userID.text!
+            let userName = self.userName.text!
+            let lsaRoomID = self.lsaRoomID.text!
+            let lsaServerURL = self.lsaServerURL.text!
+            
+            UserDefaults.standard.set(userID, forKey: "userID")
+            UserDefaults.standard.set(userName, forKey: "userName")
+            UserDefaults.standard.set(lsaRoomID, forKey: "lsaRoomID")
+            UserDefaults.standard.set(lsaServerURL, forKey: "lsaServerURL")
+            
+            let pageCall = PageCall.sharedInstance()
+            pageCall.delegate = self
+            
+            #if DEBUG
+            #else
+            // pagecall log
+            pageCall.redirectLogToDocuments(withInterval:1)
+            #endif
+
+            // PageCall MainViewController present
+            let mainViewController = pageCall.mainViewController
+            mainViewController.modalPresentationStyle = .overFullScreen
+            self.present(mainViewController, animated: true, completion: {
+                pageCall.joinLSA(self.switchHost.isOn, serverURL: lsaServerURL, roomID: lsaRoomID, userID: userID, userName: userName)
+            })
+        }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.start.layer.cornerRadius = 10
         self.start.clipsToBounds = true
+        self.lsaStart.layer.cornerRadius = 10
+        self.lsaStart.clipsToBounds = true
         
         self.myID.text = UserDefaults.standard.string(forKey: "myID") ?? "testID"
         self.roomID.text = UserDefaults.standard.string(forKey: "roomID") ?? "testRoomID"
         self.serverURL.text = UserDefaults.standard.string(forKey: "serverURL") ?? "https://pplink.net"
+        
+        self.userID.text = UserDefaults.standard.string(forKey: "userID") ?? "host_id"
+        self.userName.text = UserDefaults.standard.string(forKey: "userName") ?? "host_name"
+        self.lsaRoomID.text = UserDefaults.standard.string(forKey: "lsaRoomID") ?? "class101_test"
+        self.lsaServerURL.text = UserDefaults.standard.string(forKey: "lsaServerURL") ?? "https://lsa-demo.pplink.net"
     }
 }
 
