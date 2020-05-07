@@ -43,14 +43,16 @@ var app = {
             //var logger = require('cordova/plugin/ios/logger');
             //logger.level('ERROR');
             
+            /*
             // load adapter.js
-            //var adapterVersion = 'latest';
-            //var script = document.createElement("script");
-            //script.type = "text/javascript";
-            //script.src = "https://webrtc.github.io/adapter/adapter-" + adapterVersion + ".js";
-            //script.async = false;
-            //document.getElementsByTagName("head")[0].appendChild(script);
-            //console.log('load adapter.js');
+            var adapterVersion = 'latest';
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "https://webrtc.github.io/adapter/adapter-" + adapterVersion + ".js";
+            script.async = false;
+            document.getElementsByTagName("head")[0].appendChild(script);
+            console.log('load adapter.js');
+             */
         }
         
         document.addEventListener('pause', this.onPause, false);
@@ -173,7 +175,7 @@ function mapDOM(element, json) {
 
 function loadHtml(html) {
   var json = mapDOM(html, false);
-  console.log('json', JSON.stringify(json));
+  console.log('json', json);
   (function (map, window) {
     if (!window) console.error('global variable \'window\' is needed');
 
@@ -182,9 +184,7 @@ function loadHtml(html) {
 
     var setAttribute = function (currentNode, attributes) {
       for (var attrName in attributes) {
-        if (attrName !== 'nomodule') {
-          currentNode.setAttribute(attrName, attributes[attrName]);
-        }
+        currentNode.setAttribute(attrName, attributes[attrName]);
       }
     };
 
@@ -234,11 +234,15 @@ function loadHtml(html) {
       }
 
       if (currentNode.tagName === 'SCRIPT' && !!currentNode.src) { // script
-        scriptQueue.push({parentNode: parentNode, currentNode: currentNode});
+          if (!!currentNode.getAttributeNode('nomodule')) {
+              // do nothing
+          } else {
+              scriptQueue.push({parentNode: parentNode, currentNode: currentNode});
+          }
       } else {
-        if (parentNode !== rootNode) {
-          parentNode.appendChild(currentNode);
-        }
+          if (parentNode !== rootNode) {
+            parentNode.appendChild(currentNode);
+          }
       }
     };
 
@@ -272,7 +276,7 @@ function processUrl(url) {
     var decodedHtml = decodeURI(rawHtml);
     //console.log('decodedHtml', decodedHtml);
     var html = decodedHtml.replace(/\<!DOCTYPE.+?\>/g,'').replace(/\<!doctype.+?\>/g,'').trim();
-    console.log('retHtml', html);
+    //console.log('retHtml', html);
     
     loadHtml(html);
 }
