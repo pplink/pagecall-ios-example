@@ -30,20 +30,21 @@ var app = {
     onDeviceReady: function() {
         var cordova = window.cordova;
         if (cordova && cordova.plugins && cordova.plugins.iosrtc && cordova.platformId === 'ios') {
+            
+            // Enable iosrtc debug (Optional)
+            //cordova.plugins.iosrtc.debug.enable('iosrtc*');
+            cordova.plugins.iosrtc.debug.enable(false);
+            
+            // Set log level ERROR
+            var logger = require('cordova/plugin/ios/logger');
+            logger.level('ERROR');
+            
+            /*
             // Expose WebRTC and GetUserMedia SHIM as Globals (Optional)
             // Alternatively WebRTC API will be inside cordova.plugins.iosrtc namespace
             // already use PCA client
-            //cordova.plugins.iosrtc.registerGlobals();
+            cordova.plugins.iosrtc.registerGlobals();
             
-            // Enable iosrtc debug (Optional)
-            cordova.plugins.iosrtc.debug.enable('iosrtc*');
-            //cordova.plugins.iosrtc.debug.enable(false);
-            
-            // Set log level ERROR
-            //var logger = require('cordova/plugin/ios/logger');
-            //logger.level('ERROR');
-            
-            /*
             // load adapter.js
             var adapterVersion = 'latest';
             var script = document.createElement("script");
@@ -52,7 +53,7 @@ var app = {
             script.async = false;
             document.getElementsByTagName("head")[0].appendChild(script);
             console.log('load adapter.js');
-             */
+            */
         }
         
         document.addEventListener('pause', this.onPause, false);

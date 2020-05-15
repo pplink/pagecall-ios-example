@@ -84,7 +84,7 @@ class ViewController: UIViewController {
             let mainViewController = pageCall.mainViewController
             mainViewController.modalPresentationStyle = .overFullScreen
             self.present(mainViewController, animated: true, completion: {
-                pageCall.joinLSA(self.switchHost.isOn, serverURL: lsaServerURL, roomID: lsaRoomID, userID: userID, userName: userName)
+                pageCall.liveStreaming(withURL: lsaServerURL, hosting: self.switchHost.isOn, roomID: lsaRoomID, userID: userID, userName: userName)
             })
         }
     
