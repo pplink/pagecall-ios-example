@@ -84,7 +84,7 @@ class ViewController: UIViewController {
             let mainViewController = pageCall.mainViewController
             mainViewController.modalPresentationStyle = .overFullScreen
             self.present(mainViewController, animated: true, completion: {
-                pageCall.liveStreaming(withURL: lsaServerURL, hosting: self.switchHost.isOn, roomID: lsaRoomID, userID: userID, userName: userName)
+                pageCall.liveStreaming(withURL: lsaServerURL, isHost: self.switchHost.isOn, roomID: lsaRoomID, userID: userID, userName: userName)
             })
         }
     
@@ -100,10 +100,10 @@ class ViewController: UIViewController {
         self.roomID.text = UserDefaults.standard.string(forKey: "roomID") ?? "testRoomID"
         self.serverURL.text = UserDefaults.standard.string(forKey: "serverURL") ?? "https://pplink.net"
         
-        self.userID.text = UserDefaults.standard.string(forKey: "userID") ?? "host_id"
-        self.userName.text = UserDefaults.standard.string(forKey: "userName") ?? "host_name"
-        self.lsaRoomID.text = UserDefaults.standard.string(forKey: "lsaRoomID") ?? "class101_test"
-        self.lsaServerURL.text = UserDefaults.standard.string(forKey: "lsaServerURL") ?? "https://lsa-demo.pplink.net"
+        self.userID.text = UserDefaults.standard.string(forKey: "userID") ?? "testID"
+        self.userName.text = UserDefaults.standard.string(forKey: "userName") ?? "testName"
+        self.lsaRoomID.text = UserDefaults.standard.string(forKey: "lsaRoomID") ?? "class101_test_"
+        self.lsaServerURL.text = UserDefaults.standard.string(forKey: "lsaServerURL") ?? "https://pplink.net"
     }
 }
 

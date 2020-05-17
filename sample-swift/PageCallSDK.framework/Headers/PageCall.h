@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)replayWithRoomID:(NSString *)roomID serverURL:(NSString*)serverURL;
 
 // Live Streaming
-- (void)liveStreamingWithURL:(NSString *)urlString hosting:(BOOL)hosting roomID:(NSString *)roomID userID:(NSString *)userID userName:(NSString *)userName;
+- (void)liveStreamingWithURL:(NSString *)urlString isHost:(BOOL)isHost roomID:(NSString *)roomID userID:(NSString *)userID userName:(NSString *)userName;
 
 // Load HTML String
 - (void)loadHTMLString:(NSString *)htmlString;
