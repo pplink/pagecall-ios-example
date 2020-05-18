@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)connectInMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL;
 
 // PCA Call
-- (void)callMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL;
+- (void)callMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL appName:(NSString *)appName;
 
 // PCA Replay
 - (void)replayWithRoomID:(NSString *)roomID serverURL:(NSString*)serverURL;

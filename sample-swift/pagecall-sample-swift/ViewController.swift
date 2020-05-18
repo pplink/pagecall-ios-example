@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         mainViewController.modalPresentationStyle = .overFullScreen
         self.present(mainViewController, animated: true, completion: {
             // #1 Call
-            pageCall.callMyID(myID, roomID: roomID, serverURL: serverURL)
+            pageCall.callMyID(myID, roomID: roomID, serverURL: serverURL, appName: "pagecall-for-onuii")
             
             // #2 Connect-In
             //pageCall.connect(inMyID: myID, roomID: roomID, serverURL: serverURL)
