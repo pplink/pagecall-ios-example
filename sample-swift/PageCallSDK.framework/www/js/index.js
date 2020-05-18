@@ -32,12 +32,12 @@ var app = {
         if (cordova && cordova.plugins && cordova.plugins.iosrtc && cordova.platformId === 'ios') {
             
             // Enable iosrtc debug (Optional)
-            //cordova.plugins.iosrtc.debug.enable('iosrtc*');
-            cordova.plugins.iosrtc.debug.enable(false);
+            cordova.plugins.iosrtc.debug.enable('iosrtc*');
+            //cordova.plugins.iosrtc.debug.enable(false);
             
             // Set log level ERROR
-            var logger = cordova.require('cordova/plugin/ios/logger');
-            logger.useLogger(false);
+            //var logger = cordova.require('cordova/plugin/ios/logger');
+            //logger.useLogger(false);
             //console.log('Set cordova logger');
             
             // Expose WebRTC and GetUserMedia SHIM as Globals (Optional)
