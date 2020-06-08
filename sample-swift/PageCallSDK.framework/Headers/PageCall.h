@@ -29,10 +29,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)connectInMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL;
 
 // PCA Call
-- (void)callMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL appName:(NSString *)appName;
+- (void)callMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL appName:(nullable NSString *)appName template:(nullable NSDictionary *)template;
 
 // PCA Replay
 - (void)replayWithRoomID:(NSString *)roomID serverURL:(NSString*)serverURL;
+
+// Live Streaming
+- (void)liveStreamingWithURL:(NSString *)urlString;
 
 // Live Streaming
 - (void)liveStreamingWithURL:(NSString *)urlString isHost:(BOOL)isHost roomID:(NSString *)roomID userID:(NSString *)userID userName:(NSString *)userName;
@@ -50,7 +53,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)pageCallLogFilePath;
 
 // Log to Documents
-- (void)redirectLogToDocumentsWithInterval:(NSInteger)hour;
+- (void)redirectLogToDocumentsWithTimeInterval:(NSInteger)hour;
+
+- (void)redirectLogToDocumentsWithRoomCount:(NSInteger)count;
 
 - (void)restoreLog;
 
