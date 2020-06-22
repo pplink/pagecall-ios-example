@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         #if DEBUG
         #else
         // pagecall log
-        pageCall.redirectLogToDocuments(withInterval:1)
+        pageCall.redirectLogToDocuments(withRoomCount: 3)
         #endif
 
         // PageCall MainViewController present

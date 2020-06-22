@@ -24,25 +24,23 @@ var app = {
     },
 
     // deviceready Event Handler
-    //
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         var cordova = window.cordova;
         if (cordova && cordova.plugins && cordova.plugins.iosrtc && cordova.platformId === 'ios') {
+            // Expose WebRTC and GetUserMedia SHIM as Globals (Optional)
+            // Alternatively WebRTC API will be inside cordova.plugins.iosrtc namespace
+            //cordova.plugins.iosrtc.registerGlobals();
             
             // Enable iosrtc debug (Optional)
             //cordova.plugins.iosrtc.debug.enable('iosrtc*');
             cordova.plugins.iosrtc.debug.enable(false);
             
-            // Set log level ERROR
+            // disable console log
+            // https://cordova.apache.org/announcements/2017/09/08/ios-release.html
             //var logger = cordova.require('cordova/plugin/ios/logger');
             //logger.useLogger(false);
-            
-            // Expose WebRTC and GetUserMedia SHIM as Globals (Optional)
-            // Alternatively WebRTC API will be inside cordova.plugins.iosrtc namespace
-            // already use PCA client
-            // cordova.plugins.iosrtc.registerGlobals();
             
             // load adapter.js
             var adapterVersion = 'latest';
@@ -51,12 +49,12 @@ var app = {
             script.src = "https://webrtc.github.io/adapter/adapter-" + adapterVersion + ".js";
             script.async = false;
             document.getElementsByTagName("head")[0].appendChild(script);
-            console.log('load adapter.js');
+            console.log('Load adapter.js');
+            console.log('Cordova device ready!!!');
         }
         
         document.addEventListener('pause', this.onPause, false);
         document.addEventListener('resume', this.onResume, false);
-        
         document.addEventListener('audioroute-changed',
            function(event) {
               console.log('Audio route changed: ' + event.reason);
@@ -67,21 +65,19 @@ var app = {
     
     onPause: function() {
         console.log('PageCallMobile onPause');
-        
-//        if (window['iosCordovaOnPause']) {
-//            console.log('PageCallMobile iosCordovaOnPause');
-//            window['iosCordovaOnPause']();
-//        }
+        if (window['iosCordovaOnPause']) {
+            console.log('PageCallMobile iosCordovaOnPause');
+            window['iosCordovaOnPause']();
+        }
     },
     
     onResume: function() {
         console.log('PageCallMobile onResume');
-        
         // Reconnect
-//        if (window['iosCordovaOnResume']) {
-//            console.log('PageCallMobile iosCordovaOnResume');
-//            window['iosCordovaOnResume']();
-//        }
+        if (window['iosCordovaOnResume']) {
+            console.log('PageCallMobile iosCordovaOnResume');
+            window['iosCordovaOnResume']();
+        }
     },
 
     // Update DOM on a Received Event
