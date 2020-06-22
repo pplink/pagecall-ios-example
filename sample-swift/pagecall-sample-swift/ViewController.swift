@@ -47,7 +47,8 @@ class ViewController: UIViewController {
         mainViewController.modalPresentationStyle = .overFullScreen
         self.present(mainViewController, animated: true, completion: {
             // #1 Call
-            pageCall.callMyID(myID, roomID: roomID, serverURL: serverURL, appName: "pagecall-for-onuii", template: nil)
+            //pageCall.callMyID(myID, roomID: roomID, serverURL: serverURL, appName: "pagecall-for-onuii", template: nil)
+            pageCall.callMyID(myID, roomID: roomID, serverURL: serverURL, appName: nil, template: nil)
             
             // #2 Connect-In
             //pageCall.connect(inMyID: myID, roomID: roomID, serverURL: serverURL)
@@ -77,7 +78,7 @@ class ViewController: UIViewController {
             #if DEBUG
             #else
             // pagecall log
-            pageCall.redirectLogToDocuments(withInterval:1)
+            pageCall.redirectLogToDocuments(withRoomCount: 3)
             #endif
 
             // PageCall MainViewController present
