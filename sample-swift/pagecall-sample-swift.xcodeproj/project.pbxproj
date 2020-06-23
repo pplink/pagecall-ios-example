@@ -342,7 +342,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "pagecall-sample-swift/pagecall-sample-swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9H2SNY3HBF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -355,7 +355,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8.7;
+				MARKETING_VERSION = 1.8.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pplink.pagecallapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/PageCallSDK.framework/Headers";
@@ -371,7 +371,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "pagecall-sample-swift/pagecall-sample-swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9H2SNY3HBF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -384,7 +384,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8.7;
+				MARKETING_VERSION = 1.8.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pplink.pagecallapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/PageCallSDK.framework/Headers";

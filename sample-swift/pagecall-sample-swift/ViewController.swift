@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var myID: UITextField!
     @IBOutlet var roomID: UITextField!
     @IBOutlet var serverURL: UITextField!
+    @IBOutlet var parameter: UITextField!
     @IBOutlet var start: UIButton!
     
     @IBOutlet var userID: UITextField!
@@ -28,10 +29,12 @@ class ViewController: UIViewController {
         let myID = self.myID.text!
         let roomID = self.roomID.text!
         let serverURL = self.serverURL.text!
+        let parameter = self.parameter.text!
         
         UserDefaults.standard.set(myID, forKey: "myID")
         UserDefaults.standard.set(roomID, forKey: "roomID")
         UserDefaults.standard.set(serverURL, forKey: "serverURL")
+        UserDefaults.standard.set(parameter, forKey: "parameter")
         
         let pageCall = PageCall.sharedInstance()
         pageCall.delegate = self
@@ -47,8 +50,8 @@ class ViewController: UIViewController {
         mainViewController.modalPresentationStyle = .overFullScreen
         self.present(mainViewController, animated: true, completion: {
             // #1 Call
-            //pageCall.callMyID(myID, roomID: roomID, serverURL: serverURL, appName: "pagecall-for-onuii", template: nil)
-            pageCall.callMyID(myID, roomID: roomID, serverURL: serverURL, appName: nil, template: nil)
+            //pageCall.callMyID(myID, roomID: roomID, serverURL: serverURL, parameter: "app=delta-canvas-demo&preset=seoltab")
+            pageCall.callMyID(myID, roomID: roomID, serverURL: serverURL, parameter: parameter)
             
             // #2 Connect-In
             //pageCall.connect(inMyID: myID, roomID: roomID, serverURL: serverURL)
@@ -100,6 +103,7 @@ class ViewController: UIViewController {
         self.myID.text = UserDefaults.standard.string(forKey: "myID") ?? "testID"
         self.roomID.text = UserDefaults.standard.string(forKey: "roomID") ?? "testRoomID"
         self.serverURL.text = UserDefaults.standard.string(forKey: "serverURL") ?? "https://pplink.net"
+        self.parameter.text = UserDefaults.standard.string(forKey: "parameter") ?? "app=delta-canvas-demo&preset=seoltab"
         
         self.userID.text = UserDefaults.standard.string(forKey: "userID") ?? "testID"
         self.userName.text = UserDefaults.standard.string(forKey: "userName") ?? "testName"
