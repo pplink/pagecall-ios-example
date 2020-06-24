@@ -26,13 +26,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (PageCall *)sharedInstance;
 
 // PCA ConnectionIn
-- (void)connectInMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL;
+- (void)connectIn:(NSString*)requestUrl myId:(NSString *)myId publicRoomId:(NSString *)publicRoomId;
 
 // PCA Call
-- (void)callMyID:(NSString *)myID roomID:(NSString *)roomID serverURL:(NSString*)serverURL parameter:(nullable NSString *)parameter;
+- (void)call:(NSString*)requestUrl publicRoomId:(NSString *)publicRoomId query:(nullable NSString *)query;
 
 // PCA Replay
-- (void)replayWithRoomID:(NSString *)roomID serverURL:(NSString*)serverURL;
+- (void)replay:(NSString*)requestUrl roomId:(NSString *)roomId;
 
 // Live Streaming
 - (void)liveStreamingWithURL:(NSString *)urlString;
