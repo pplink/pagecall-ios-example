@@ -20,8 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PageCall : NSObject
 
 @property (nonatomic, weak, nullable) id<PageCallDelegate> delegate;
-
-@property (nonatomic, strong) UIViewController* mainViewController;
+@property (nonatomic, weak) UIViewController* mainViewController;
 
 + (PageCall *)sharedInstance;
 

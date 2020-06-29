@@ -50,14 +50,13 @@ class ViewController: UIViewController {
         #endif
 
         // PageCall MainViewController present
-        let mainViewController = pageCall.mainViewController
-        mainViewController.modalPresentationStyle = .overFullScreen
-        self.present(mainViewController, animated: true, completion: {
+        pageCall.mainViewController!.modalPresentationStyle = .overFullScreen
+        self.present(pageCall.mainViewController!, animated: true, completion: {
             // #1 Call
             pageCall.call(requestUrl, publicRoomId: publicRoomId, query: query)
             
             // #2 Connect-In
-            //pageCall.connect(in: requestUrl, myId: myId, publicRoomId: publicRoomId)
+            pageCall.connect(in: requestUrl, myId: myId, publicRoomId: publicRoomId)
             
             // #3 Load HTML
 //            let htmlFile = Bundle.main.path(forResource: "Documents/test", ofType: "html")
@@ -84,9 +83,8 @@ class ViewController: UIViewController {
         #endif
 
         // PageCall MainViewController present
-        let mainViewController = pageCall.mainViewController
-        mainViewController.modalPresentationStyle = .overFullScreen
-        self.present(mainViewController, animated: true, completion: {
+        pageCall.mainViewController!.modalPresentationStyle = .overFullScreen
+        self.present(pageCall.mainViewController!, animated: true, completion: {
             pageCall.replay(replayUrl, roomId: replayRoomId)
         })
     }
@@ -113,8 +111,8 @@ class ViewController: UIViewController {
 
         // PageCall MainViewController present
         let mainViewController = pageCall.mainViewController
-        mainViewController.modalPresentationStyle = .overFullScreen
-        self.present(mainViewController, animated: true, completion: {
+        mainViewController!.modalPresentationStyle = .overFullScreen
+        self.present(mainViewController!, animated: true, completion: {
             pageCall.liveStreaming(withURL: lsaServerURL, isHost: self.switchHost.isOn, roomID: lsaRoomID, userID: userID, userName: userName)
         })
     }
