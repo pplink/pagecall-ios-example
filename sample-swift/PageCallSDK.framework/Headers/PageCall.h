@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // PCA ConnectionIn
 - (void)connectIn:(NSString*)requestUrl myId:(NSString *)myId publicRoomId:(NSString *)publicRoomId;
+- (void)connectIn:(NSDictionary*)pcaInfo roomData:(nullable NSDictionary *)roomData userData:(nullable NSDictionary *)userData template:(nullable NSDictionary *)template;
 
 // PCA Call
 - (void)call:(NSString*)requestUrl publicRoomId:(NSString *)publicRoomId query:(nullable NSString *)query;

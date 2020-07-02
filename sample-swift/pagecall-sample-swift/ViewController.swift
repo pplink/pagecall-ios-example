@@ -52,11 +52,26 @@ class ViewController: UIViewController {
         // PageCall MainViewController present
         pageCall.mainViewController!.modalPresentationStyle = .overFullScreen
         self.present(pageCall.mainViewController!, animated: true, completion: {
+            
+            // Request with POST method
+            let pcaInfo = ["url": requestUrl,
+                           "userId": myId,
+                           "publicRoomId": publicRoomId,
+                           "allowedTime": NSNumber(value: 10),
+                           "appName": "pagecall",
+                           "appVersion": "1.0.0"] as [String : Any]
+            
+            let roomData = ["room": "testRoom", "title": "PageCall Mobile!!!"]
+            let userData = ["frame": NSNumber(value: 30), "mirror": NSNumber(value: true)]
+            let template = ["videoPosition": "floating", "language": "en"]
+            
+            pageCall.connect(in: pcaInfo, roomData: roomData, userData: userData, template: template);
+            
             // #1 Call
-            pageCall.call(requestUrl, publicRoomId: publicRoomId, query: query)
+            //pageCall.call(requestUrl, publicRoomId: publicRoomId, query: query)
             
             // #2 Connect-In
-            pageCall.connect(in: requestUrl, myId: myId, publicRoomId: publicRoomId)
+            //pageCall.connect(in: requestUrl, myId: myId, publicRoomId: publicRoomId)
             
             // #3 Load HTML
 //            let htmlFile = Bundle.main.path(forResource: "Documents/test", ofType: "html")
