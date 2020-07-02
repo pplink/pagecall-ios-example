@@ -344,7 +344,6 @@
                                                     <constraint firstItem="Xxr-zh-p4u" firstAttribute="top" secondItem="RmP-FW-kNz" secondAttribute="bottom" constant="8" id="GNn-h5-TUM"/>
                                                     <constraint firstItem="r8D-BS-1lf" firstAttribute="top" secondItem="9Gu-H5-tzu" secondAttribute="bottom" constant="8" id="Ifw-UU-Y4d"/>
                                                     <constraint firstItem="Xxr-zh-p4u" firstAttribute="leading" secondItem="qox-r4-bm7" secondAttribute="leadingMargin" constant="8" id="JdK-Xn-5oP"/>
-                                                    <constraint firstAttribute="width" constant="333" id="Jzs-x1-x65"/>
                                                     <constraint firstItem="Sdk-gy-h64" firstAttribute="leading" secondItem="qox-r4-bm7" secondAttribute="leadingMargin" constant="8" id="LGR-U5-o5X"/>
                                                     <constraint firstItem="xBL-Gc-enK" firstAttribute="top" secondItem="Xxr-zh-p4u" secondAttribute="bottom" constant="8" id="P1g-4m-CzV"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Suz-AS-ZBH" secondAttribute="trailing" constant="20" symbolic="YES" id="QFr-Ei-mIy"/>
@@ -376,14 +375,10 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Xco-an-Taf" secondAttribute="trailing" constant="8" id="1jc-9c-Vdc"/>
-                                            <constraint firstItem="qox-r4-bm7" firstAttribute="leading" secondItem="arx-8R-ff2" secondAttribute="leading" constant="8" id="3hl-Ba-eVz"/>
-                                            <constraint firstAttribute="trailing" secondItem="qox-r4-bm7" secondAttribute="trailing" constant="8" id="59o-Y6-yWS"/>
                                             <constraint firstItem="qox-r4-bm7" firstAttribute="leading" secondItem="arx-8R-ff2" secondAttribute="leadingMargin" id="8xP-fE-Qcx"/>
                                             <constraint firstItem="qox-r4-bm7" firstAttribute="top" secondItem="Xco-an-Taf" secondAttribute="bottom" id="E40-57-NMh"/>
                                             <constraint firstItem="Xco-an-Taf" firstAttribute="top" secondItem="arx-8R-ff2" secondAttribute="topMargin" id="EVO-37-qdZ"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Xco-an-Taf" secondAttribute="trailing" id="T6P-xM-TNY"/>
-                                            <constraint firstItem="Xco-an-Taf" firstAttribute="leading" secondItem="arx-8R-ff2" secondAttribute="leading" constant="8" id="ZeL-Ks-7WK"/>
                                             <constraint firstItem="Xco-an-Taf" firstAttribute="leading" secondItem="arx-8R-ff2" secondAttribute="leadingMargin" id="fju-Lq-ib7"/>
                                             <constraint firstItem="qox-r4-bm7" firstAttribute="trailing" secondItem="arx-8R-ff2" secondAttribute="trailingMargin" id="fu8-Ca-JZh"/>
                                             <constraint firstAttribute="height" constant="1200" id="i08-wP-tVl"/>
