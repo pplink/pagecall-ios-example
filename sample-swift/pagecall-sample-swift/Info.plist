@@ -40,6 +40,8 @@
 		<string>remote-notification</string>
 		<string>voip</string>
 	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch Screen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

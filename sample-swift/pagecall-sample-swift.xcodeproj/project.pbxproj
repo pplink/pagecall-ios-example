@@ -15,6 +15,7 @@
 		546158D3229296C300D159EC /* PageCallSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 546158D1229296C300D159EC /* PageCallSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		548378B5238FD3E0008B0B05 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548378B4238FD3DF008B0B05 /* WebRTC.framework */; };
 		548378B6238FD3E0008B0B05 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 548378B4238FD3DF008B0B05 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		549C7D8124BC386E00999BCC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549C7D8024BC386E00999BCC /* Launch Screen.storyboard */; };
 		54BE67FC22927C4300877247 /* Documents in Resources */ = {isa = PBXBuildFile; fileRef = 54BE67FB22927C4300877247 /* Documents */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		546158D1229296C300D159EC /* PageCallSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PageCallSDK.framework; sourceTree = "<group>"; };
 		548378B4238FD3DF008B0B05 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
 		5492BFAA22CCD92B00EC1AC6 /* pagecall-sample-swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "pagecall-sample-swift.entitlements"; sourceTree = "<group>"; };
+		549C7D8024BC386E00999BCC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		54BE67FB22927C4300877247 /* Documents */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Documents; path = "pagecall-sample-swift/Documents"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				54005C3B227C10D400F01F79 /* Main.storyboard */,
 				54005C3E227C10D400F01F79 /* Assets.xcassets */,
 				54005C43227C10D400F01F79 /* Info.plist */,
+				549C7D8024BC386E00999BCC /* Launch Screen.storyboard */,
 			);
 			path = "pagecall-sample-swift";
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				54005C3F227C10D400F01F79 /* Assets.xcassets in Resources */,
 				54005C3D227C10D400F01F79 /* Main.storyboard in Resources */,
+				549C7D8124BC386E00999BCC /* Launch Screen.storyboard in Resources */,
 				54BE67FC22927C4300877247 /* Documents in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,7 +343,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "pagecall-sample-swift/pagecall-sample-swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
@@ -368,7 +371,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "pagecall-sample-swift/pagecall-sample-swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
