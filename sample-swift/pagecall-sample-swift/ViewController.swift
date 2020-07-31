@@ -82,7 +82,7 @@ class ViewController: UIViewController {
         #if DEBUG
         #else
         // pagecall log
-        pageCall.redirectLogToDocuments(withRoomCount: 3)
+        pageCall.redirectLogToDocuments(withTimeInterval: 4)
         #endif
         
         // PageCall MainViewController present
@@ -109,7 +109,7 @@ class ViewController: UIViewController {
         #if DEBUG
         #else
         // pagecall log
-        pageCall.redirectLogToDocuments(withRoomCount: 3)
+        pageCall.redirectLogToDocuments(withTimeInterval: 4)
         #endif
 
         // PageCall MainViewController present
@@ -142,7 +142,7 @@ class ViewController: UIViewController {
         #if DEBUG
         #else
         // pagecall log
-        pageCall.redirectLogToDocuments(withRoomCount: 3)
+        pageCall.redirectLogToDocuments(withTimeInterval: 4)
         #endif
 
         // PageCall MainViewController present
@@ -169,7 +169,7 @@ class ViewController: UIViewController {
         #if DEBUG
         #else
         // pagecall log
-        pageCall.redirectLogToDocuments(withRoomCount: 3)
+        pageCall.redirectLogToDocuments(withTimeInterval: 4)
         #endif
 
         // PageCall MainViewController present
