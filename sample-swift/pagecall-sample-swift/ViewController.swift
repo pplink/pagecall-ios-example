@@ -265,4 +265,9 @@ extension ViewController: PageCallDelegate {
     func pageCallDidClose() {
         print("pageCallDidClose")
     }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        print("webView decidePolicyFor navigationAction")
+        decisionHandler(.allow)
+    }
 }
