@@ -49,6 +49,9 @@ NS_ASSUME_NONNULL_BEGIN
 // Close the PageCall window
 - (void)pageCallClose;
 
+// Get logs directory path
+- (NSString *)pageCallLogsDirectoryPath;
+
 // Get log file path
 - (NSString *)pageCallLogFilePath;
 
