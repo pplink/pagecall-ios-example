@@ -49,9 +49,10 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <allow-navigation href="*" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
+    <allow-navigation href="*" />
+    <allow-navigation href="jscall://*" />
     <hook src="hooks/iosrtc-swift-support.js" type="after_platform_add" />
     <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
         <string>Blink uses your camera to make video calls.</string>
