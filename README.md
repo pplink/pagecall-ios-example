@@ -16,15 +16,15 @@ Pagecall iOS SDK를 이용하면 여러분의 iOS 어플리케이션에 쉽고 �
 
 ## PageCall SDK 다운로드
 
-1. [PageCallSDK.framework](https://github.com/pplink/pagecall-ios-example/tree/master/sample-swift)
-2. [WebRTC.framework](https://github.com/pplink/pagecall-ios-example/tree/master/sample-swift)
+1. [PageCallSDK.framework](https://github.com/pplink/pagecall-ios-example/tree/master/sample-swift/Frameworks/PageCallSDK)
+2. [WebRTC.framework](https://github.com/pplink/pagecall-ios-example/tree/master/sample-swift/Frameworks/WebRTC)
 
 ## Xcode 프로젝트에 PageCall SDK 추가
 
 1. `PageCallSDK.framework`, `WebRTC.framework` 파일을 Xcode 프로젝트에 복사
 2. General → Frameworks, Libraries, and Embedded Content → ➕ 버튼 클릭 → `PageCallSDK.framework`, `WebRTC.framework` 두 개의 framework를 iOS 프로젝트에 추가
 
-     ![Frameworks.png](Frameworks.png)
+    ![Frameworks.png](Frameworks.png)
 
 3. Embed 옵션은 `Embed & Sign` 으로 설정
 4. Build Settings → Build Options → `Enable Bitcode = No` 로 설정
@@ -134,15 +134,20 @@ pageCall.mainViewController.modalPresentationStyle = UIModalPresentationOverFull
 }];
 ```
 
-### 3. PageCall 종료
+### 3. PageCallDelegate
 
-PageCallDelegate를 통해 PageCall 종료 이벤트를 받을 수 있습니다.
+PageCallDelegate를 통해 아래와 같이 PageCall 종료 이벤트와 WKNavigationDelegate, WKUIDelegate 를 받을 수 있습니다.
 
 ```swift
 // Swift
 extension ViewController: PageCallDelegate {
     func pageCallDidClose() {
         print("pageCallDidClose")
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        print("webView decidePolicyFor navigationAction")
+        decisionHandler(.allow)
     }
 }
 ```
@@ -153,8 +158,17 @@ extension ViewController: PageCallDelegate {
 
 ...
 
-- (void)pageCallDidClose {
-    NSLog(@"pageCallDidClose");
+- (void)pageCallDidClose
+{
+    NSLog(@"ViewController pageCallDidClose");
+}
+
+// WKNavigationDelegate
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler;
+{
+    if (decisionHandler) {
+        decisionHandler(WKNavigationActionPolicyAllow);
+    }
 }
 ```
 
@@ -167,17 +181,11 @@ PageCall 사용 시 기록된 Log를 사용자 App의 `Documents` 에 Log 파일
 ```swift
 // Time interval
 pageCall.redirectLogToDocuments(withInterval:1)
-
-// Room count
-pageCall.redirectLogToDocuments(withRoomCount: 3)
 ```
 
 ```objectivec
 // Time interval
 [pageCall redirectLogToDocumentsWithInterval:1];
-
-// Room count
-[pageCall redirectLogToDocumentsWithRoomCount:3];
 ```
 
 *NOTE*: 단,  해당 기능은 `Release`모드에서만 사용해야 합니다.  `Debug` 모드에서는 Xcode의 Console에 메세지가 나타나지 않습니다.
