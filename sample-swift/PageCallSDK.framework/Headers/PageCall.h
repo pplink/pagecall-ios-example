@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, nullable) id<PageCallDelegate> delegate;
 @property (nonatomic, weak) UIViewController* mainViewController;
+@property (nonatomic, weak) WKWebView* webView;
 
 + (PageCall *)sharedInstance;
 

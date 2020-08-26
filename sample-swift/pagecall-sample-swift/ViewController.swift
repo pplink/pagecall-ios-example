@@ -61,11 +61,6 @@ class ViewController: UIViewController {
         let userData = convertToDictionary(text: self.userData.text!)
         let template = convertToDictionary(text: self.template.text!)
         
-        // FIXME: test code
-//        let roomData = ["room": "testRoom", "title": "PageCall Mobile!!!"]
-//        let userData = ["frame": NSNumber(value: 30), "mirror": NSNumber(value: true)]
-//        let template = ["videoPosition": "floating", "language": "en"]
-        
         UserDefaults.standard.set(userId, forKey: "userId")
         UserDefaults.standard.set(postPublicRoomId, forKey: "postPublicRoomId")
         UserDefaults.standard.set(postUrl, forKey: "postUrl")
@@ -98,6 +93,7 @@ class ViewController: UIViewController {
         let publicRoomId = self.publicRoomId.text!
         let requestUrl = self.requestUrl.text!
         let query = self.query.text!
+        //let myId = self.userId.text!
         
         UserDefaults.standard.set(publicRoomId, forKey: "publicRoomId")
         UserDefaults.standard.set(requestUrl, forKey: "requestUrl")
