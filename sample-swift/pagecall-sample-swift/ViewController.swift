@@ -91,7 +91,7 @@ class ViewController: UIViewController {
     @IBAction func onStart(_ sender: UIButton) {
         
         let publicRoomId = self.publicRoomId.text!
-        var requestUrl = self.requestUrl.text!
+        let requestUrl = self.requestUrl.text!
         let query = self.query.text!
         //let myId = self.userId.text!
         
@@ -111,12 +111,6 @@ class ViewController: UIViewController {
         // PageCall MainViewController present
         pageCall.mainViewController!.modalPresentationStyle = .overFullScreen
         self.present(pageCall.mainViewController!, animated: true, completion: {
-            
-            if requestUrl.hasSuffix("/") {
-                requestUrl = String(format:"%@call_new", requestUrl)
-            } else {
-                requestUrl = String(format:"%@/call_new", requestUrl)
-            }
             
             // #1 Call
             pageCall.call(requestUrl, publicRoomId: publicRoomId, query: query)
