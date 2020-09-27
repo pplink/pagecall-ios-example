@@ -91,7 +91,7 @@ class ViewController: UIViewController {
     @IBAction func onStart(_ sender: UIButton) {
         
         let publicRoomId = self.publicRoomId.text!
-        let requestUrl = self.requestUrl.text!
+        var requestUrl = self.requestUrl.text!
         let query = self.query.text!
         //let myId = self.userId.text!
         
@@ -111,6 +111,13 @@ class ViewController: UIViewController {
         // PageCall MainViewController present
         pageCall.mainViewController!.modalPresentationStyle = .overFullScreen
         self.present(pageCall.mainViewController!, animated: true, completion: {
+            
+            if requestUrl.hasSuffix("/") {
+                requestUrl = String(format:"%@call_new", requestUrl)
+            } else {
+                requestUrl = String(format:"%@/call_new", requestUrl)
+            }
+            
             // #1 Call
             pageCall.call(requestUrl, publicRoomId: publicRoomId, query: query)
             
@@ -197,7 +204,7 @@ class ViewController: UIViewController {
         self.btnLsaStart.clipsToBounds = true
         
         self.publicRoomId.text = UserDefaults.standard.string(forKey: "publicRoomId") ?? "publicRoomId"
-        self.requestUrl.text = UserDefaults.standard.string(forKey: "requestUrl") ?? "https://pplink.net/call_new"
+        self.requestUrl.text = UserDefaults.standard.string(forKey: "requestUrl") ?? "https://pplink.net"
         self.query.text = UserDefaults.standard.string(forKey: "query") ?? "preset=seoltab"
         
         self.replayUrl.text = UserDefaults.standard.string(forKey: "replayUrl") ?? "https://pplink.net"
