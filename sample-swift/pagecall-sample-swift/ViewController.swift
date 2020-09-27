@@ -197,7 +197,7 @@ class ViewController: UIViewController {
         self.btnLsaStart.clipsToBounds = true
         
         self.publicRoomId.text = UserDefaults.standard.string(forKey: "publicRoomId") ?? "publicRoomId"
-        self.requestUrl.text = UserDefaults.standard.string(forKey: "requestUrl") ?? "https://pplink.net"
+        self.requestUrl.text = UserDefaults.standard.string(forKey: "requestUrl") ?? "https://pplink.net/call_new"
         self.query.text = UserDefaults.standard.string(forKey: "query") ?? "preset=seoltab"
         
         self.replayUrl.text = UserDefaults.standard.string(forKey: "replayUrl") ?? "https://pplink.net"
