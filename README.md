@@ -9,7 +9,7 @@ Pagecall iOS SDK를 이용하면 여러분의 iOS 어플리케이션에 쉽고 �
 ## 요구사항(pre-requisites)
 
 - Xcode ≥ 11.1
-- iOS ≥ 10.2
+- iOS ≥ 11
 - Swift-version ≥ 4.2
 - Real iOS Device Type: iPhone, iPad
 - Simulator:  Supported
@@ -24,7 +24,7 @@ Pagecall iOS SDK를 이용하면 여러분의 iOS 어플리케이션에 쉽고 �
 1. `PageCallSDK.framework`, `WebRTC.framework` 파일을 Xcode 프로젝트에 복사
 2. General → Frameworks, Libraries, and Embedded Content → ➕ 버튼 클릭 → `PageCallSDK.framework`, `WebRTC.framework` 두 개의 framework를 iOS 프로젝트에 추가
 
-    ![Frameworks.png](Frameworks.png)
+    ![Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/_2019-11-22__7.01.04.png](Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/_2019-11-22__7.01.04.png)
 
 3. Embed 옵션은 `Embed & Sign` 으로 설정
 4. Build Settings → Build Options → `Enable Bitcode = No` 로 설정
@@ -105,7 +105,7 @@ import PageCallSDK
 // Swift
 let myId = "teacher-001" // PCA userId
 let publicRoomId = "class-room-0010" // PCA roomId
-let requestUrl = "https://pplink.net" // PCA 인증 단계를 거친 사용자 서버의 URL
+let requestUrl = "https://pplink.net/call_new" // PCA 인증 단계를 거친 사용자 서버의 URL
 
 let pageCall = PageCall.sharedInstance()
 pageCall.delegate = self
@@ -120,9 +120,9 @@ self.present(pageCall.mainViewController!, animated: true, completion: {
 
 ```objectivec
 // Objective-C
-NSString *myId = "teacher-001"; // PCA userId
-NSString *publicRoomId = "class-room-0010"; // PCA roomId
-NSString *requestUrl = "https://pplink.net"; // PCA 인증 단계를 거친 사용자 서버의 URL
+NSString *myId = @"teacher-001"; // PCA userId
+NSString *publicRoomId = @"class-room-0010"; // PCA roomId
+NSString *requestUrl = @"https://pplink.net/call_new" // PCA 인증 단계를 거친 사용자 서버의 URL
  
 PageCall *pageCall = [PageCall sharedInstance];
 [pageCall setDelegate:self];
@@ -172,7 +172,11 @@ extension ViewController: PageCallDelegate {
 }
 ```
 
-## 추가 기능
+### Background Modes
+
+다음과 같이 Background Modes를 추가 하면 앱이 Background 상태에서도 연결이 끊어지지 않고 유지 됩니다.
+
+![Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/_2020-10-13__7.40.36.png](Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/_2020-10-13__7.40.36.png)
 
 ### PageCall Log 파일
 
