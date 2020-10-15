@@ -105,7 +105,7 @@ import PageCallSDK
 // Swift
 let myId = "teacher-001" // PCA userId
 let publicRoomId = "class-room-0010" // PCA roomId
-let requestUrl = "https://pplink.net/call_new" // PCA 인증 단계를 거친 사용자 서버의 URL
+let requestUrl = "https://pplink.net" // PCA 인증 단계를 거친 사용자 서버의 URL
 
 let pageCall = PageCall.sharedInstance()
 pageCall.delegate = self
@@ -122,7 +122,7 @@ self.present(pageCall.mainViewController!, animated: true, completion: {
 // Objective-C
 NSString *myId = @"teacher-001"; // PCA userId
 NSString *publicRoomId = @"class-room-0010"; // PCA roomId
-NSString *requestUrl = @"https://pplink.net/call_new" // PCA 인증 단계를 거친 사용자 서버의 URL
+NSString *requestUrl = @"https://pplink.net" // PCA 인증 단계를 거친 사용자 서버의 URL
  
 PageCall *pageCall = [PageCall sharedInstance];
 [pageCall setDelegate:self];
