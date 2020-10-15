@@ -90,19 +90,12 @@ PageCallSDK 적용 이전에 **PageCall API Server**에 정보를 전달할 사�
 ### 1. PageCall SDK 추가
 
 ```swift
-// Swift
 import PageCallSDK
-```
-
-```objectivec
-// Objective-C
-#import <PageCallSDK/PageCallSDK.h>
 ```
 
 ### 2. PageCall 실행
 
 ```swift
-// Swift
 let myId = "teacher-001" // PCA userId
 let publicRoomId = "class-room-0010" // PCA roomId
 let requestUrl = "https://pplink.net" // PCA 인증 단계를 거친 사용자 서버의 URL
@@ -118,28 +111,11 @@ self.present(pageCall.mainViewController!, animated: true, completion: {
 })
 ```
 
-```objectivec
-// Objective-C
-NSString *myId = @"teacher-001"; // PCA userId
-NSString *publicRoomId = @"class-room-0010"; // PCA roomId
-NSString *requestUrl = @"https://pplink.net" // PCA 인증 단계를 거친 사용자 서버의 URL
- 
-PageCall *pageCall = [PageCall sharedInstance];
-[pageCall setDelegate:self];
-
-pageCall.mainViewController.modalPresentationStyle = UIModalPresentationOverFullScreen;
-[self pageCall.mainViewController animated:YES completion:^{
-     // PCA Connect-In
-     [pageCall connectIn:requestUrl myId:myId publicRoomId:publicRoomId];
-}];
-```
-
 ### 3. PageCallDelegate
 
 PageCallDelegate를 통해 아래와 같이 PageCall 종료 이벤트와 WKNavigationDelegate, WKUIDelegate 를 받을 수 있습니다.
 
 ```swift
-// Swift
 extension ViewController: PageCallDelegate {
     func pageCallDidClose() {
         print("pageCallDidClose")
@@ -148,26 +124,6 @@ extension ViewController: PageCallDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         print("webView decidePolicyFor navigationAction")
         decisionHandler(.allow)
-    }
-}
-```
-
-```objectivec
-// Objective-C
-@interface ViewController ()<PageCallDelegate>
-
-...
-
-- (void)pageCallDidClose
-{
-    NSLog(@"ViewController pageCallDidClose");
-}
-
-// WKNavigationDelegate
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler;
-{
-    if (decisionHandler) {
-        decisionHandler(WKNavigationActionPolicyAllow);
     }
 }
 ```
