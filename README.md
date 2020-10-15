@@ -139,13 +139,7 @@ extension ViewController: PageCallDelegate {
 PageCall 사용 시 기록된 Log를 사용자 App의 `Documents` 에 Log 파일을 자동으로 저장합니다. Interval 단위는 Hour입니다.
 
 ```swift
-// Time interval
 pageCall.redirectLogToDocuments(withInterval:1)
-```
-
-```objectivec
-// Time interval
-[pageCall redirectLogToDocumentsWithInterval:1];
 ```
 
 *NOTE*: 단,  해당 기능은 `Release`모드에서만 사용해야 합니다.  `Debug` 모드에서는 Xcode의 Console에 메세지가 나타나지 않습니다.
