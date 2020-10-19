@@ -63,6 +63,9 @@ NS_ASSUME_NONNULL_BEGIN
 // Close the PageCall window
 - (void)pageCallClose;
 
+// PCA runJSFunction
+- (void)runJSFunction:(NSString *)functionName completionHandler:(void (^)(BOOL result))completionHandler;
+
 // Get logs directory path
 - (NSString *)pageCallLogsDirectoryPath;
 
@@ -73,6 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)redirectLogToDocumentsWithTimeInterval:(NSInteger)hour;
 - (void)restoreLog;
 
+// PageCall Delegate
 - (void)pageCallDidClose;
 
 // WKNavigationDelegate
