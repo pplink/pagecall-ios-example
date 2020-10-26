@@ -26,19 +26,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+        /* seoltab test code
         PageCall.sharedInstance().runJSFunction("window['__exitWithBackup']()") { (result: Bool) in
             if (result) {
                 NSLog("exitWithBackup success")
             }
-        }
+        }*/
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        /* seoltab test code
         PageCall.sharedInstance().runJSFunction("window['__clearFinishTimer']()") { (result: Bool) in
             if (result) {
                 NSLog("clearFinishTimer success")
             }
-        }
+        }*/
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
