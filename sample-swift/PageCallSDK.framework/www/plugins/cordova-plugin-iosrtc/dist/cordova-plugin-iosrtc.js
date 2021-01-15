@@ -2741,16 +2741,20 @@ function enumerateDevices() {
 
 
 function getMediaDeviceInfos(devices) {
+    debug('getMediaDeviceInfos invoke');
 	debug('getMediaDeviceInfos() | [devices:%o]', devices);
 
 	var id,
 		mediaDeviceInfos = [];
 
+    debug('mediaDeviceInfos push');
 	for (id in devices) {
 		if (devices.hasOwnProperty(id)) {
 			mediaDeviceInfos.push(new MediaDeviceInfo(devices[id]));
 		}
 	}
+    
+    debug('mediaDeviceInfos return');
 
 	return mediaDeviceInfos;
 }
@@ -2782,7 +2786,7 @@ function isPositiveFloat(number) {
 
 
 function getUserMedia(constraints) {
-    debug('debug js getUserMedia');
+    debug('getUserMedia invoke');
 	// Detect callback usage to assist 5.0.1 to 5.0.2 migration
 	// TODO remove on 6.0.0
 	Errors.detectDeprecatedCallbaksUsage('cordova.plugins.iosrtc.getUserMedia', arguments);
@@ -3402,36 +3406,36 @@ function restoreCallbacksSupport() {
 function registerGlobals(doNotRestoreCallbacksSupport) {
 	debug('registerGlobals()');
 
-//	if (!global.navigator) {
-//        debug('global.navigator');
-//		global.navigator = {};
-//	}
-//
-//	if (!navigator.mediaDevices) {
-//        debug('MediaDevices check');
-//		navigator.mediaDevices = new MediaDevices();
-//	}
-//
-//	// Restore Callback support
-//	if (!doNotRestoreCallbacksSupport) {
-//        debug('restoreCallbacksSupport check');
-//		restoreCallbacksSupport();
-//	}
+	if (!global.navigator) {
+        debug('global.navigator');
+		global.navigator = {};
+	}
+
+	if (!navigator.mediaDevices) {
+        debug('MediaDevices check');
+		navigator.mediaDevices = new MediaDevices();
+	}
+
+	// Restore Callback support
+	if (!doNotRestoreCallbacksSupport) {
+        debug('restoreCallbacksSupport check');
+		restoreCallbacksSupport();
+	}
     
     debug('registerGlobals start');
     
     // shpark not work in iOS14.3
 	//navigator.getUserMedia                  = getUserMedia;
-	//navigator.webkitGetUserMedia            = getUserMedia;
+	navigator.webkitGetUserMedia            = getUserMedia;
 	navigator.mediaDevices.getUserMedia     = getUserMedia;
 	navigator.mediaDevices.enumerateDevices = enumerateDevices;
 
 	window.RTCPeerConnection                = RTCPeerConnection;
-	//window.webkitRTCPeerConnection          = RTCPeerConnection;
+	window.webkitRTCPeerConnection          = RTCPeerConnection;
 	window.RTCSessionDescription            = RTCSessionDescription;
 	window.RTCIceCandidate                  = RTCIceCandidate;
 	window.MediaStream                      = MediaStream;
-	//window.webkitMediaStream                = MediaStream;
+	window.webkitMediaStream                = MediaStream;
 	window.MediaStreamTrack                 = MediaStreamTrack;
 }
 
