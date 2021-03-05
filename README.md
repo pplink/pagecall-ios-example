@@ -152,6 +152,6 @@ Simulator Architecture 가 포함된 `PageCallSDK-Release-universal`  framework 
 error: unable to load standard library for target 'arm64-apple-ios11.0'
 ```
 
-Build Settings → Architectures → Build Active Architecture Only = NO
+Build Settings → Architectures → Build Active Architecture Only = YES
 
-![Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/Screen_Shot_2021-03-05_at_4.06.04_PM.png](Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/Screen_Shot_2021-03-05_at_4.06.04_PM.png)
+![Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/Screen_Shot_2021-03-05_at_4.10.51_PM.png](Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/Screen_Shot_2021-03-05_at_4.10.51_PM.png)
