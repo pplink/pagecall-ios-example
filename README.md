@@ -30,44 +30,6 @@ Pagecall iOS SDK를 이용하면 여러분의 iOS 어플리케이션에 쉽고 �
 4. Build Settings → Build Options → `Enable Bitcode = No` 로 설정
 5. Build Settings → Swift Compiler - Search Paths → Import Paths  + `$(SRCROOT)/PageCallSDK.framework/Headers` 추가
 
-## AppStore 배포를 위한 Framework의 불필요한 Architecture 삭제
-
-Framework내의 시뮬레이터 Architercture가 포함되면 AppStore 업로드가 불가능합니다. 따라서 Archive시 아래와 같이 Architecture를 제거해주는 스크립트를 반드시 추가 해야 합니다.
-
-1. Build Phases → ➕ 버튼 클릭 → New Run Script Phase
-2. 스크립트 추가
-
-    ```bash
-    APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
-
-    # This script loops through the frameworks embedded in the application and
-    # removes unused architectures.
-    find "$APP_PATH" -name '*.framework' -type d | while read -r FRAMEWORK
-    do
-        FRAMEWORK_EXECUTABLE_NAME=$(defaults read "$FRAMEWORK/Info.plist" CFBundleExecutable)
-        FRAMEWORK_EXECUTABLE_PATH="$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME"
-        echo "Executable is $FRAMEWORK_EXECUTABLE_PATH"
-
-        EXTRACTED_ARCHS=()
-
-        for ARCH in $ARCHS
-        do
-            echo "Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME"
-            lipo -extract "$ARCH" "$FRAMEWORK_EXECUTABLE_PATH" -o "$FRAMEWORK_EXECUTABLE_PATH-$ARCH"
-            EXTRACTED_ARCHS+=("$FRAMEWORK_EXECUTABLE_PATH-$ARCH")
-        done
-
-        echo "Merging extracted architectures: ${ARCHS}"
-        lipo -o "$FRAMEWORK_EXECUTABLE_PATH-merged" -create "${EXTRACTED_ARCHS[@]}"
-        rm "${EXTRACTED_ARCHS[@]}"
-
-        echo "Replacing original executable with thinned version"
-        rm "$FRAMEWORK_EXECUTABLE_PATH"
-        mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
-
-    done
-    ```
-
 ## 개인정보 허용에 대한 설명 추가
 
 iOS 프로젝트의 info.plist에 아래와 같이 **개인정보 허용에 대한 설명**을 추가해야 합니다.
@@ -75,8 +37,6 @@ iOS 프로젝트의 info.plist에 아래와 같이 **개인정보 허용에 대�
 ```xml
 <key>NSCameraUsageDescription</key>
 <string>Blink uses your camera to make video calls.</string>
-<key>NSContactsUsageDescription</key>
-<string>Blink needs access to your contacts in order to be able to call them.</string>
 <key>NSMicrophoneUsageDescription</key>
 <string>Blink uses your microphone to make calls.</string>
 <key>NSPhotoLibraryAddUsageDescription</key>
@@ -128,13 +88,13 @@ extension ViewController: PageCallDelegate {
 }
 ```
 
-### Background Modes
+## Background Modes
 
 다음과 같이 Background Modes를 추가 하면 앱이 Background 상태에서도 연결이 끊어지지 않고 유지 됩니다.
 
 ![Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/_2020-10-13__7.40.36.png](Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/_2020-10-13__7.40.36.png)
 
-### PageCall Log 파일
+## PageCall Log 파일
 
 PageCall 사용 시 기록된 Log를 사용자 App의 `Documents` 에 Log 파일을 자동으로 저장합니다. Interval 단위는 Hour입니다.
 
@@ -143,3 +103,55 @@ pageCall.redirectLogToDocuments(withInterval:1)
 ```
 
 *NOTE*: 단,  해당 기능은 `Release`모드에서만 사용해야 합니다.  `Debug` 모드에서는 Xcode의 Console에 메세지가 나타나지 않습니다.
+
+## Known Issues
+
+## AppStore 배포를 위한 Framework의 불필요한 Architecture 삭제
+
+Framework내의 Simulator Architecture 가 포함되면 AppStore 업로드가 불가능합니다. 따라서 Archive 시 아래와 같이 Architecture 를 제거해주는 스크립트를 추가 해야 합니다.
+
+1. Build Phases → ➕ 버튼 클릭 → New Run Script Phase
+2. 스크립트 추가
+
+    ```bash
+    APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
+
+    # This script loops through the frameworks embedded in the application and
+    # removes unused architectures.
+    find "$APP_PATH" -name '*.framework' -type d | while read -r FRAMEWORK
+    do
+        FRAMEWORK_EXECUTABLE_NAME=$(defaults read "$FRAMEWORK/Info.plist" CFBundleExecutable)
+        FRAMEWORK_EXECUTABLE_PATH="$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME"
+        echo "Executable is $FRAMEWORK_EXECUTABLE_PATH"
+
+        EXTRACTED_ARCHS=()
+
+        for ARCH in $ARCHS
+        do
+            echo "Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME"
+            lipo -extract "$ARCH" "$FRAMEWORK_EXECUTABLE_PATH" -o "$FRAMEWORK_EXECUTABLE_PATH-$ARCH"
+            EXTRACTED_ARCHS+=("$FRAMEWORK_EXECUTABLE_PATH-$ARCH")
+        done
+
+        echo "Merging extracted architectures: ${ARCHS}"
+        lipo -o "$FRAMEWORK_EXECUTABLE_PATH-merged" -create "${EXTRACTED_ARCHS[@]}"
+        rm "${EXTRACTED_ARCHS[@]}"
+
+        echo "Replacing original executable with thinned version"
+        rm "$FRAMEWORK_EXECUTABLE_PATH"
+        mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
+
+    done
+    ```
+
+## Swift Compiler Error
+
+Simulator Architecture 가 포함된 `PageCallSDK-Release-universal`  framework 사용 시 아래와 같은 에러가 발생하면 Build Settings 를 통해 해결이 가능합니다.
+
+```
+error: unable to load standard library for target 'arm64-apple-ios11.0'
+```
+
+Build Settings → Architectures → Build Active Architecture Only = NO
+
+![Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/Screen_Shot_2021-03-05_at_4.06.04_PM.png](Get%20the%20PageCall%20SDK%20for%20iOS%20d77fcba5f54747809c2c1dae7a2a98d1/Screen_Shot_2021-03-05_at_4.06.04_PM.png)
