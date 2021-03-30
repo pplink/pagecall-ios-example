@@ -73,12 +73,33 @@ self.present(pageCall.mainViewController!, animated: true, completion: {
 
 ### 3. PageCallDelegate
 
-PageCallDelegate를 통해 아래와 같이 PageCall 종료 이벤트와 WKNavigationDelegate, WKUIDelegate 를 받을 수 있습니다.
+PageCallDelegate를 통해 아래와 같이 PageCall 종료 이벤트와 WKScriptMessage, WKNavigationDelegate, WKUIDelegate 를 받을 수 있습니다.
 
 ```swift
 extension ViewController: PageCallDelegate {
     func pageCallDidClose() {
         print("pageCallDidClose")
+    }
+
+		func pageCallDidReceive(_ message: WKScriptMessage) {
+        print("pageCallDidReceive message")
+        
+        /* sample JS
+        var message = {
+            command: 'finishedLoading',
+            interval: 1
+        };
+        window.webkit.messageHandlers.pageCallSDK.postMessage(message);
+        */
+        
+        if message.name == "pageCallSDK" {
+            guard let dict = message.body as? [String: AnyObject],
+                  let command = dict["command"] as? String,
+                  let interval = dict["interval"] as? Int else {
+                    return
+            }
+            print("pageCallDidReceiveScriptMessage command: \(command), interval: \(interval)")
+        }
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
