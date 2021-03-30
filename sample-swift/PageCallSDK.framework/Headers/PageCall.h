@@ -16,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 
+// PageCallDelegate
 - (void)pageCallDidClose;
+- (void)pageCallDidReceiveScriptMessage:(WKScriptMessage *)message;
 
 // WKNavigationDelegate
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler;
@@ -81,6 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // PageCall Delegate
 - (void)pageCallDidClose;
+- (void)pageCallDidReceiveScriptMessage:(WKScriptMessage *)message;
 
 // WKNavigationDelegate
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler;
