@@ -188,6 +188,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import ObjectiveC;
+@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -205,6 +207,24 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+
+@class WKWebView;
+@class WKUserContentController;
+
+SWIFT_CLASS("_TtC11PageCallSDK12WKWebViewRTC")
+@interface WKWebViewRTC : NSObject
+- (nonnull instancetype)initWithWkwebview:(WKWebView * _Nullable)wkwebview contentController:(WKUserContentController * _Nullable)contentController OBJC_DESIGNATED_INITIALIZER;
+- (void)dispose;
+- (void)onReset;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+@class WKScriptMessage;
+
+@interface WKWebViewRTC (SWIFT_EXTENSION(PageCallSDK)) <WKScriptMessageHandler>
+- (void)userContentController:(WKUserContentController * _Nonnull)userContentController didReceiveScriptMessage:(WKScriptMessage * _Nonnull)message;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
