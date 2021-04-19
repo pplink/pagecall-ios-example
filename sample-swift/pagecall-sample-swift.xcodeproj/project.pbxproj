@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,23 +11,23 @@
 		54005C3A227C10D400F01F79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54005C39227C10D400F01F79 /* ViewController.swift */; };
 		54005C3D227C10D400F01F79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54005C3B227C10D400F01F79 /* Main.storyboard */; };
 		54005C3F227C10D400F01F79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54005C3E227C10D400F01F79 /* Assets.xcassets */; };
-		546158D2229296C300D159EC /* PageCallSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546158D1229296C300D159EC /* PageCallSDK.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		546158D3229296C300D159EC /* PageCallSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 546158D1229296C300D159EC /* PageCallSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		548378B5238FD3E0008B0B05 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548378B4238FD3DF008B0B05 /* WebRTC.framework */; };
-		548378B6238FD3E0008B0B05 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 548378B4238FD3DF008B0B05 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		545D51FB2626F67B00A6CAC0 /* PageCallSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545D51F92626F67B00A6CAC0 /* PageCallSDK.xcframework */; };
+		545D51FC2626F67B00A6CAC0 /* PageCallSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 545D51F92626F67B00A6CAC0 /* PageCallSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		545D51FD2626F67B00A6CAC0 /* WebRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545D51FA2626F67B00A6CAC0 /* WebRTC.xcframework */; };
+		545D51FE2626F67B00A6CAC0 /* WebRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 545D51FA2626F67B00A6CAC0 /* WebRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		549C7D8124BC386E00999BCC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549C7D8024BC386E00999BCC /* Launch Screen.storyboard */; };
 		54BE67FC22927C4300877247 /* Documents in Resources */ = {isa = PBXBuildFile; fileRef = 54BE67FB22927C4300877247 /* Documents */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		54005C4C227C110800F01F79 /* Embed Frameworks */ = {
+		545D51FF2626F67B00A6CAC0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				546158D3229296C300D159EC /* PageCallSDK.framework in Embed Frameworks */,
-				548378B6238FD3E0008B0B05 /* WebRTC.framework in Embed Frameworks */,
+				545D51FE2626F67B00A6CAC0 /* WebRTC.xcframework in Embed Frameworks */,
+				545D51FC2626F67B00A6CAC0 /* PageCallSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,8 +41,8 @@
 		54005C3C227C10D400F01F79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54005C3E227C10D400F01F79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54005C43227C10D400F01F79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		546158D1229296C300D159EC /* PageCallSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PageCallSDK.framework; sourceTree = "<group>"; };
-		548378B4238FD3DF008B0B05 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
+		545D51F92626F67B00A6CAC0 /* PageCallSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PageCallSDK.xcframework; sourceTree = "<group>"; };
+		545D51FA2626F67B00A6CAC0 /* WebRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = WebRTC.xcframework; sourceTree = "<group>"; };
 		5492BFAA22CCD92B00EC1AC6 /* pagecall-sample-swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "pagecall-sample-swift.entitlements"; sourceTree = "<group>"; };
 		549C7D8024BC386E00999BCC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		54BE67FB22927C4300877247 /* Documents */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Documents; path = "pagecall-sample-swift/Documents"; sourceTree = "<group>"; };
@@ -53,8 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				546158D2229296C300D159EC /* PageCallSDK.framework in Frameworks */,
-				548378B5238FD3E0008B0B05 /* WebRTC.framework in Frameworks */,
+				545D51FD2626F67B00A6CAC0 /* WebRTC.xcframework in Frameworks */,
+				545D51FB2626F67B00A6CAC0 /* PageCallSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,8 +96,8 @@
 		548378B3238FD3DF008B0B05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				546158D1229296C300D159EC /* PageCallSDK.framework */,
-				548378B4238FD3DF008B0B05 /* WebRTC.framework */,
+				545D51F92626F67B00A6CAC0 /* PageCallSDK.xcframework */,
+				545D51FA2626F67B00A6CAC0 /* WebRTC.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,8 +112,8 @@
 				54005C30227C10D400F01F79 /* Sources */,
 				54005C31227C10D400F01F79 /* Frameworks */,
 				54005C32227C10D400F01F79 /* Resources */,
-				54005C4C227C110800F01F79 /* Embed Frameworks */,
 				54645697241102A90013A244 /* ShellScript */,
+				545D51FF2626F67B00A6CAC0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,7 +192,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\n    FRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\n    FRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\n    echo \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\n    EXTRACTED_ARCHS=()\n\n    for ARCH in $ARCHS\n    do\n        echo \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\n        lipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\n        EXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\n    done\n\n    echo \"Merging extracted architectures: ${ARCHS}\"\n    lipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\n    rm \"${EXTRACTED_ARCHS[@]}\"\n\n    echo \"Replacing original executable with thinned version\"\n    rm \"$FRAMEWORK_EXECUTABLE_PATH\"\n    mv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone\n";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -351,7 +352,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/pagecall-sample-swift/Frameworks",
+					"$(PROJECT_DIR)/pagecall-sample-swift",
 				);
 				INFOPLIST_FILE = "pagecall-sample-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -382,7 +383,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/pagecall-sample-swift/Frameworks",
+					"$(PROJECT_DIR)/pagecall-sample-swift",
 				);
 				INFOPLIST_FILE = "pagecall-sample-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
