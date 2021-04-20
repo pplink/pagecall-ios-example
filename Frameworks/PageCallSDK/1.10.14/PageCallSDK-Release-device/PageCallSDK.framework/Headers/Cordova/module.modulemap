@@ -1,4 +1,0 @@
-module Cordova {
-    header "CDV.h"
-    export *
-}
