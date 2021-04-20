@@ -8,6 +8,18 @@
 		<data>
 		ZZYaiwH/m1aAok6qxtw53gIvjJE=
 		</data>
+		<key>Frameworks/WebRTC.framework/Info.plist</key>
+		<data>
+		ajI8WJt7NEVhqCFj3ZCKAWaQbpA=
+		</data>
+		<key>Frameworks/WebRTC.framework/WebRTC</key>
+		<data>
+		IcfHBOfpQtGXfeTdc/aTYUtU3E4=
+		</data>
+		<key>Frameworks/WebRTC.framework/_CodeSignature/CodeResources</key>
+		<data>
+		rMa9v9gI826mD1QmLV9+lm3B1AE=
+		</data>
 		<key>Headers/PageCall.h</key>
 		<data>
 		+v1nkkgYroQ3WXnJDH87s+Ka8qk=
@@ -34,7 +46,7 @@
 		</data>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		gYRlMjzKMg9wwEESVMrgp3abG3w=
+		7iUQpQwrZ9usv6Jz8jFPTXvYcSQ=
 		</data>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -46,7 +58,7 @@
 		</data>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		gYRlMjzKMg9wwEESVMrgp3abG3w=
+		7iUQpQwrZ9usv6Jz8jFPTXvYcSQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -82,6 +94,27 @@
 			<key>hash2</key>
 			<data>
 			b2N+SSKD4NXz8t/rARIBb/7oGT4n+6tiB3ign+hFJes=
+			</data>
+		</dict>
+		<key>Frameworks/WebRTC.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cMEY3z3F2Z5uwclmVb7HIY6vzJ9Mmp65j11/uPr9ICk=
+			</data>
+		</dict>
+		<key>Frameworks/WebRTC.framework/WebRTC</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RA5+/arYUZCaYaTaxEGOIumvb2T/TC9iBaHuTxQA3Mk=
+			</data>
+		</dict>
+		<key>Frameworks/WebRTC.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6dEjqkTZF7uoLCHNC4LrHHktSxvMGsnRzbz4EUT5Txs=
 			</data>
 		</dict>
 		<key>Headers/PageCall.h</key>
@@ -123,7 +156,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dVhS4IgW/CyL7QlIhnzMpUDZKpPDHsSc7QxOknLji8I=
+			c57e+drCisZXLC10g/q942rWc9Eb4yAGNsTowZBraSQ=
 			</data>
 		</dict>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -144,7 +177,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dVhS4IgW/CyL7QlIhnzMpUDZKpPDHsSc7QxOknLji8I=
+			c57e+drCisZXLC10g/q942rWc9Eb4yAGNsTowZBraSQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
