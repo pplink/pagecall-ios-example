@@ -329,6 +329,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 9H2SNY3HBF;
 				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "pagecall-sample-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
