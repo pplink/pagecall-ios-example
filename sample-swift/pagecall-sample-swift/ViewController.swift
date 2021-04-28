@@ -16,9 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet var requestUrl: UITextField!
     @IBOutlet var query: UITextField!
     @IBOutlet var replayUrl: UITextField!
-    @IBOutlet var replayRoomId: UITextField!
+    //@IBOutlet var replayRoomId: UITextField!
     @IBOutlet var btnStart: UIButton!
-    @IBOutlet var btnReplay: UIButton!
+    //@IBOutlet var btnReplay: UIButton!
     @IBOutlet var btnRequestURL: UIButton!
     
     // post request
@@ -147,7 +147,7 @@ class ViewController: UIViewController {
             pageCall.webViewLoadRequest(withURLString: replayUrl)
         })
     }
-    
+    /*
     @IBAction func onReplay(_ sender: UIButton) {
             
         let replayUrl = self.replayUrl.text!
@@ -170,7 +170,7 @@ class ViewController: UIViewController {
         self.present(pageCall.mainViewController!, animated: true, completion: {
             pageCall.replay(replayUrl, roomId: replayRoomId)
         })
-    }
+    }*/
     
     @IBAction func onLSA(_ sender: UIButton) {
         let userID = self.userID.text!
@@ -205,8 +205,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.btnStart.layer.cornerRadius = 10
         self.btnStart.clipsToBounds = true
-        self.btnReplay.layer.cornerRadius = 10
-        self.btnReplay.clipsToBounds = true
+        //self.btnReplay.layer.cornerRadius = 10
+        //self.btnReplay.clipsToBounds = true
         self.btnRequestURL.layer.cornerRadius = 10
         self.btnRequestURL.clipsToBounds = true
         
@@ -227,7 +227,7 @@ class ViewController: UIViewController {
         self.query.text = UserDefaults.standard.string(forKey: "query") ?? "preset=seoltab"
         
         self.replayUrl.text = UserDefaults.standard.string(forKey: "replayUrl") ?? "https://pplink.net"
-        self.replayRoomId.text = UserDefaults.standard.string(forKey: "replayRoomId") ?? ""
+        //self.replayRoomId.text = UserDefaults.standard.string(forKey: "replayRoomId") ?? ""
         
         self.userId.text = UserDefaults.standard.string(forKey: "userId") ?? "userId"
         self.postPublicRoomId.text = UserDefaults.standard.string(forKey: "postPublicRoomId") ?? "publicRoomId"
