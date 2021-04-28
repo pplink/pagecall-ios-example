@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet var replayRoomId: UITextField!
     @IBOutlet var btnStart: UIButton!
     @IBOutlet var btnReplay: UIButton!
-    @IBOutlet var btnUrl: UIButton!
+    @IBOutlet var btnRequestURL: UIButton!
     
     // post request
     @IBOutlet var userId: UITextField!
@@ -126,7 +126,7 @@ class ViewController: UIViewController {
         })
     }
     
-    @IBAction func onUrl(_ sender: UIButton) {
+    @IBAction func onRequestURL(_ sender: UIButton) {
             
         let replayUrl = self.replayUrl.text!
             
@@ -207,8 +207,8 @@ class ViewController: UIViewController {
         self.btnStart.clipsToBounds = true
         self.btnReplay.layer.cornerRadius = 10
         self.btnReplay.clipsToBounds = true
-        self.btnUrl.layer.cornerRadius = 10
-        self.btnUrl.clipsToBounds = true
+        self.btnRequestURL.layer.cornerRadius = 10
+        self.btnRequestURL.clipsToBounds = true
         
         self.roomData.layer.cornerRadius = 5.0
         self.roomData.layer.borderWidth = 0.5

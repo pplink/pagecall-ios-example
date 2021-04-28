@@ -152,11 +152,11 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="PageCallWithURL">
+                                                        <state key="normal" title="RequestURL">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="onUrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJG-Bm-XKw"/>
+                                                            <action selector="onRequestURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yzs-78-MIn"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -636,8 +636,8 @@
                         <outlet property="btnLsaStart" destination="X2O-qW-TKM" id="4z2-SM-3N3"/>
                         <outlet property="btnPostStart" destination="ghK-md-Lbg" id="vvd-oB-bvE"/>
                         <outlet property="btnReplay" destination="cMf-Qe-Czg" id="vn9-iT-Tjh"/>
+                        <outlet property="btnRequestURL" destination="czt-aV-w7F" id="A4z-hh-7bG"/>
                         <outlet property="btnStart" destination="mOG-7P-6Dt" id="5bH-j5-IdN"/>
-                        <outlet property="btnUrl" destination="czt-aV-w7F" id="6Xb-7w-6vV"/>
                         <outlet property="lsaRoomID" destination="Sdk-gy-h64" id="TEI-q2-iJZ"/>
                         <outlet property="lsaServerURL" destination="Xxr-zh-p4u" id="j8y-Wl-hPK"/>
                         <outlet property="postPublicRoomId" destination="qGY-BP-FuC" id="ui3-Zt-3yW"/>
