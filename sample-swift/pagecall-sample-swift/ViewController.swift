@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet var replayRoomId: UITextField!
     @IBOutlet var btnStart: UIButton!
     @IBOutlet var btnReplay: UIButton!
+    @IBOutlet var btnUrl: UIButton!
     
     // post request
     @IBOutlet var userId: UITextField!
@@ -125,6 +126,28 @@ class ViewController: UIViewController {
         })
     }
     
+    @IBAction func onUrl(_ sender: UIButton) {
+            
+        let replayUrl = self.replayUrl.text!
+            
+        UserDefaults.standard.set(replayUrl, forKey: "replayUrl")
+            
+        let pageCall = PageCall.sharedInstance()
+        pageCall.delegate = self
+            
+        #if DEBUG
+        #else
+        // pagecall log
+        pageCall.redirectLogToDocuments(withTimeInterval: 4)
+        #endif
+
+        // PageCall MainViewController present
+        pageCall.mainViewController!.modalPresentationStyle = .overFullScreen
+        self.present(pageCall.mainViewController!, animated: true, completion: {
+            pageCall.webViewLoadRequest(withURLString: replayUrl)
+        })
+    }
+    
     @IBAction func onReplay(_ sender: UIButton) {
             
         let replayUrl = self.replayUrl.text!
@@ -184,6 +207,8 @@ class ViewController: UIViewController {
         self.btnStart.clipsToBounds = true
         self.btnReplay.layer.cornerRadius = 10
         self.btnReplay.clipsToBounds = true
+        self.btnUrl.layer.cornerRadius = 10
+        self.btnUrl.clipsToBounds = true
         
         self.roomData.layer.cornerRadius = 5.0
         self.roomData.layer.borderWidth = 0.5
