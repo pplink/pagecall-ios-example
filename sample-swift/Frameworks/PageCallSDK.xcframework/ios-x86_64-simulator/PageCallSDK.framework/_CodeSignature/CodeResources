@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/PageCallSDK-Swift.h</key>
 		<data>
-		VlIvRIvg1Ow9KKVgxgjSEbEOH+4=
+		65De8++SlX1X8wyg47cLmlstInE=
 		</data>
 		<key>Headers/PageCallSDK.h</key>
 		<data>
@@ -22,31 +22,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qsj5cquKwIPdwxqXEuJufOo4xTs=
+		bRnbjT6ol+he9ilOb5UYP0aj+Bs=
 		</data>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Is8hOl9EG0E4taneYBgniGR8duU=
+		VJpEYLFB9E2sbf2wR0cn2Em2x/A=
 		</data>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		UJrfG9Wy16HQ5ursDsXIzm1eD18=
+		gDOvgmOKJeqvCC2VtmfgwRs+vxw=
 		</data>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		7iUQpQwrZ9usv6Jz8jFPTXvYcSQ=
+		opRQyhs1ffXoF6Z/kDKLhm52+sY=
 		</data>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		Is8hOl9EG0E4taneYBgniGR8duU=
+		VJpEYLFB9E2sbf2wR0cn2Em2x/A=
 		</data>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		UJrfG9Wy16HQ5ursDsXIzm1eD18=
+		gDOvgmOKJeqvCC2VtmfgwRs+vxw=
 		</data>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		7iUQpQwrZ9usv6Jz8jFPTXvYcSQ=
+		opRQyhs1ffXoF6Z/kDKLhm52+sY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,7 +63,7 @@
 		</dict>
 		<key>jsWKWebViewRTC.js</key>
 		<data>
-		64iAu2PbubOHZ8f93587r2LVn6c=
+		68WfbKhl0v5yAkfgOgxZ4hSy3qQ=
 		</data>
 		<key>ko.lproj/Localizable.strings</key>
 		<dict>
@@ -95,7 +95,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/Ns80rTwlBp1fRvTQy4BzGI+6PsVxm1GdiCEL1lJ5QU=
+			hzxYZUyPtpfxZb5kqkvKeBjaELyrETXnkLy5qD0NQOw=
 			</data>
 		</dict>
 		<key>Headers/PageCallSDK.h</key>
@@ -109,42 +109,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xpaowGC6QPxVlq/I6v6x58KNFJdH3Qo8vLL+np4f8F4=
+			38TapqevPTS0q5JBu3zo49af+W4vE0BoCXS1fEmS6fQ=
 			</data>
 		</dict>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Inds0NeH/2lTo4Xjq1HTXmLGztycfPimoVaawb+kj1M=
+			umfFywQSRVUBlkCaXjsFEE5mwMIgIu3IwHy2kYClgek=
 			</data>
 		</dict>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c57e+drCisZXLC10g/q942rWc9Eb4yAGNsTowZBraSQ=
+			YPJSX4fSL7zBG/bdUGkcT7nZ8AZa50x+655k2bRDkhI=
 			</data>
 		</dict>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xpaowGC6QPxVlq/I6v6x58KNFJdH3Qo8vLL+np4f8F4=
+			38TapqevPTS0q5JBu3zo49af+W4vE0BoCXS1fEmS6fQ=
 			</data>
 		</dict>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Inds0NeH/2lTo4Xjq1HTXmLGztycfPimoVaawb+kj1M=
+			umfFywQSRVUBlkCaXjsFEE5mwMIgIu3IwHy2kYClgek=
 			</data>
 		</dict>
 		<key>Modules/PageCallSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c57e+drCisZXLC10g/q942rWc9Eb4yAGNsTowZBraSQ=
+			YPJSX4fSL7zBG/bdUGkcT7nZ8AZa50x+655k2bRDkhI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -167,7 +167,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			a+mD1BFj6HAMpr+3bkJNfxafE+5E2MShr+5nYLTADpc=
+			AUilpPcwEYSgz/0Iyz8PGP04dM4ERbTAt2seTRWNa+0=
 			</data>
 		</dict>
 		<key>ko.lproj/Localizable.strings</key>

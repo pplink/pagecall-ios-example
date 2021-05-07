@@ -5379,5 +5379,15 @@ function releaseMediaStreamRenderer(video) {
 },{"./MediaStreamRenderer":16,"debug":1}]},{},[32])(32)
 });
 
-// pagecall shpark create cordova.plugins
-cordova = Object.create({}, { plugins: { value: false } });
+// pagecall cordova.plugins
+// cordova = Object.create({}, { plugins: { value: true } }, iosrtc: { value: true });
+// iosrtc = Object.create({}, iosrtc: {value: true});
+cordova = Object.create({}, {
+    plugins: {
+        value: false
+    }, platformId: {
+        value: "ios"
+    }, platformVersion: {
+        value: "6.0.17"
+    }
+});
