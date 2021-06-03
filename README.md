@@ -81,7 +81,7 @@ extension ViewController: PageCallDelegate {
         print("pageCallDidClose")
     }
 
-    func pageCallDidReceive(_ message: WKScriptMessage) {
+		func pageCallDidReceive(_ message: WKScriptMessage) {
         print("pageCallDidReceive message")
         
         /* sample JS
@@ -117,10 +117,19 @@ extension ViewController: PageCallDelegate {
 
 ## PageCall Log 파일
 
-PageCall 사용 시 기록된 Log를 사용자 App의 `Documents` 에 Log 파일을 자동으로 저장합니다. Interval 단위는 Hour입니다.
+PageCall 사용 시 기록된 Log를 사용자 App의 `Documents` 에 Log 파일을 자동으로 저장합니다. Interval 단위는 Hour입니다. `pageCallLogFilePath()` 를 통해 로그파일이 저장된 경로를 가져올 수 있습니다.
 
 ```swift
-pageCall.redirectLogToDocuments(withInterval:1)
+PageCall.sharedInstance().redirectLogToDocuments(withInterval:1)
+
+// log file path
+PageCall.sharedInstance().pageCallLogFilePath()
+```
+
+로그 파일 저장 경로
+
+```
+AppData/Library/Caches/PageCallLogs/2021-06-03_15_03.log
 ```
 
 *NOTE*: 단,  해당 기능은 `Release`모드에서만 사용해야 합니다.  `Debug` 모드에서는 Xcode의 Console에 메세지가 나타나지 않습니다.
