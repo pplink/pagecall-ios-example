@@ -58,6 +58,13 @@ var app = {
         document.addEventListener('resume', this.onResume, false);
         
         this.receivedEvent('deviceready');
+        
+        // deviceReady postMessage
+        var message = {
+            command: 'deviceReady'
+        };
+        window.webkit.messageHandlers.pageCallSDK.postMessage(message);
+        console.log('Pagecall#index deviceready pageCallSDK.postMessage');
     },
     
     onPause: function() {
