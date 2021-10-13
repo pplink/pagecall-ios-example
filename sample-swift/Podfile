@@ -1,0 +1,7 @@
+
+target 'pagecall-sample-swift' do
+  use_frameworks!
+
+  pod 'PageCallSDK', '~> 2.1.3', :source => 'https://github.com/pplink/pagecall-specs.git'
+
+end
