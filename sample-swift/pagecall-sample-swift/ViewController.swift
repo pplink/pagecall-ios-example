@@ -103,6 +103,10 @@ class ViewController: UIViewController {
         let pageCall = PageCall.sharedInstance()
         pageCall.delegate = self
         
+        // addListeners example
+//        let listeners = ["join", "finishedLoading", "initialPagesUploadFailed"]
+//        pageCall.addListeners(listeners)
+        
         #if DEBUG
         #else
         // pagecall log
@@ -294,18 +298,20 @@ extension ViewController: PageCallDelegate {
         /* sample JS
         var message = {
             command: 'finishedLoading',
-            interval: 1
+            type: 'command'
+            interval: 1.0
         };
         window.webkit.messageHandlers.pageCallSDK.postMessage(message);
         */
         
         if message.name == "pageCallSDK" {
             guard let dict = message.body as? [String: AnyObject],
+                  let type = dict["type"] as? String,
                   let command = dict["command"] as? String,
                   let interval = dict["interval"] as? Int else {
                     return
             }
-            print("pageCallDidReceiveScriptMessage command: \(command), interval: \(interval)")
+            print("pageCallDidReceiveScriptMessage type: \(type), command: \(command), interval: \(interval)")
         }
     }
     
